@@ -1,12 +1,11 @@
 body{
 	background-color: #242424;
+	margin: 0px !important;
 }
 #background-image{
 	position: fixed;
 	top: 0;
 	left: 0;
-	min-width: 100%;
-	min-height: 100%;
 	z-index: -1;
 }
 
