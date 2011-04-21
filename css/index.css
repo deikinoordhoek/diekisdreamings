@@ -1,0 +1,30 @@
+body{
+	background-color: #242424;
+}
+#background-image{
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -1;
+}
+
+#header{
+	width: 100%;
+}
+
+
+#navbar{
+	margin-top: 15px;
+}
+.navbar-link{
+	margin-right: 20px;
+	margin-left: 2px;
+}
+
+
+#banner{
+	margin: 40px auto 0px;
+	width: 900px;
+}
