@@ -1,6 +1,10 @@
+html{
+	height: 100%;
+}
 body{
 	background-color: #242424;
 	margin: 0px !important;
+	height: 100%;
 }
 #background-image{
 	position: fixed;
@@ -27,3 +31,38 @@ body{
 	margin: 40px auto 0px;
 	width: 900px ;
 }
+
+#content{
+	height: auto;
+	margin-top: 50px;
+}
+
+#sidebar{
+	width: 400px;
+	float: left;
+
+}
+
+#sidebar-bottom, #sidebar-top{
+	width: 400px;
+	height: 25px;
+	float: left;
+}
+#sidebar-top{background-image: url('../images/sidebar-border-top.png');}
+#sidebar-bottom{background-image: url('../images/sidebar-border-top.png'); margin-top: 12px;}
+
+#sidebar-bottom-corner, #sidebar-corner{
+	width: 41px;
+	height: 37px;
+	margin-left: 400px;
+}
+#sidebar-bottom-corner{	background-image: url('../images/sidebar-border-bottom-corner.png');}
+#sidebar-corner{background-image: url('../images/sidebar-border-corner.png');}
+
+#sidebar-right{
+	background-image: url('../images/sidebar-border-right.png');
+	width: 29px;
+	height: 300px;
+	margin-left: 412px;
+}
+
