@@ -1,3 +1,3 @@
-$(document).ready(function(){
+window.onload = function(){
 	$("#links").slideDown();
-});
+};
