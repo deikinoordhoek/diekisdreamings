@@ -47,8 +47,6 @@ function drawImage(i_num, mask, image_src, canvas){
 	canvas.height = mask.height;
 
 	context.drawImage(mask, 0, 0);	
-	alert(mask.width);
-	alert(mask.height);
 	imgd = context.getImageData(0, 0, mask.width, mask.height); 
 	pix_mask = imgd.data;
 
