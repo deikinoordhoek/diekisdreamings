@@ -21,8 +21,12 @@ function addCanvasElements(images){
 	canvas_elements = new Array();
 	for (i = 0; i < images.length; i++){
 		canvas_element = document.createElement('canvas');
+		for (j = 0; j < images[i].attributes.length; j++){
+			canvas_element.setAttribute(images[i].attributes[j].nodeName, images[i].attributes[j].nodeValue)
+		}
 		canvas_elements[i] = canvas_element;
 		images[i].parentNode.insertBefore(canvas_elements[i], images[i]);
+		
 	}
 	return canvas_elements;
 }
