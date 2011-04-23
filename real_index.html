@@ -8,6 +8,7 @@
 		<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
 		<script src="js/index.js" type="text/javascript"></script>
+		<script src="js/jpeg-transparency.js" type="text/javascript"></script>
 	</head>
 
 	<body>
@@ -49,11 +50,9 @@
 				</td>
 				<td>
 					<div id ="links">
-						<canvas id="links-canvas">
-							<a href="portfolio"><img src="images/portfolio-bar.png" id="portfolio-bar" class="bar-image"></a>
-							<a href="http://blog.diekisdreamings.com"><img src="images/blog-bar.png" id="blog-bar" class="bar-image"></a>
-							<a href="resources"><img src="images/resources-bar.png" id="resources-bar" class="bar-image"></a>
-						</canvas>
+						<a href="portfolio"><img data-fallback="images/portfolio-bar.png" data-image="portfolio-bars.jpg" data-mask="portfolio-mask.png" id="portfolio-bar" class="bar-image" data-width="184"></a>
+						<a href="http://blog.diekisdreamings.com"><img src="images/blog-bar.png" id="blog-bar" class="bar-image"></a>
+						<a href="resources"><img src="images/resources-bar.png" id="resources-bar" class="bar-image"></a>
 					</div>
 				</td>
 			</tr>
