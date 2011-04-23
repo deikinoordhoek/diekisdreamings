@@ -33,16 +33,16 @@ function drawCanvasElements(canvas_elements, images){
 	for (i = 0; i < canvas_elements.length;i++){
 		mask[i] = new Image()
 
-		mask[i].src = images[i].getAttribute('data-mask');
-
 		mask[i].onload = drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
+
+		mask[i].src = images[i].getAttribute('data-mask');
 	}
 }
 
 function drawImage(i_num, mask, image_src, canvas){
 	// Remember, only mask is loaded at this point.
 	alert(i_num);
-	alert(mask.src);
+	alert(mask.width);
 	alert(image_src);
 
 	context = canvas.getContext('2d');
@@ -54,10 +54,8 @@ function drawImage(i_num, mask, image_src, canvas){
 	pix_mask = imgd.data;
 
 	image = new Image();
-	image.src = image_src;
-
 	image.onload = drawImageAlpha(context, image, pix_mask);
-	
+	image.src = image_src;	
 	
 }
 
