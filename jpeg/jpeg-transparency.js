@@ -33,7 +33,7 @@ function drawCanvasElements(canvas_elements, images){
 	for (i = 0; i < canvas_elements.length;i++){
 		mask[i] = new Image()
 
-		mask[i].onload = new drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
+		mask[i].onload = drawImage;
 
 		mask[i].src = images[i].getAttribute('data-mask');
 	}
