@@ -42,13 +42,10 @@ function drawCanvasElements(canvas_elements, images){
 function drawImage(i_num, mask, image_src, canvas){
 	// Remember, only mask is loaded at this point.
 	context = canvas.getContext('2d');
-	if (mask.width == 0){
-		while (mask.width == 0){
-		}
-	}
+
 	canvas.width = mask.width;
 	canvas.height = mask.height;
-
+	alert(i_num, mask.width, image_src);
 	context.drawImage(mask, 0, 0);	
 	imgd = context.getImageData(0, 0, mask.width, mask.height); 
 	pix_mask = imgd.data;
@@ -62,10 +59,6 @@ function drawImage(i_num, mask, image_src, canvas){
 }
 
 function drawImageAlpha(context, image, pix_mask){
-	if (image.width == 0){
-		while (image.width == 0){
-		}
-	}
 	context.drawImage(image,0,0)
 	imgd = context.getImageData(0,0,image.width, image.height);
 	pix = imgd.data;
