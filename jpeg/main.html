@@ -4,9 +4,20 @@
 		<script src="jpeg-transparency.js" type="text/javascript"></script>
 		<title> JPEG transparency experiment</title>
 	</head>
+	<style>
+		.demonstration-image{
+			float: left;
+		}
+	</style>
 	<body style="background: #aaa;">
-		<img data-fallback="image.png" data-image="image.jpg" data-mask="mask.png" >
-		<img src="image.png" >
+		<div>
+			<img class = "demonstration-image" data-fallback="image.png" data-image="image.jpg" data-mask="mask.png">
+			JPEG Image (29KB) + PNG Mask (8KB) = 38KB
+		</div>	
+		<div>
+			<img class = "demonstration-image" src="image.png" >
+			PNG Image (105KB)
+		</div>
 
 	</body>
 </html>
