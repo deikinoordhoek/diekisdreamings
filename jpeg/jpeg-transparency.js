@@ -71,28 +71,33 @@ function drawImage(i_num, mask, image_src, canvas){
 		//This is necessary because events are confusing.
 		
 		context = canvas.getContext('2d');
-
+		
 		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width');
 		else canvas.width = mask.width;
 		if (!!canvas.getAttribute('data-height')) canvas.height = canvas.getAttribute('data-height');
 		else canvas.height = mask.height;
 
-		context.drawImage(mask, 0, 0);	
+		if (!!canvas.getAttribute('offset-x')) offset_x = canvas.getAttribute('offset-x');
+		else offset_x = 0;
+		if (!!canvas.getAttribute('offset-y')) offset_y = canvas.getAttribute('offset-y');
+		else offset_y = 0;
+
+		context.drawImage(mask, -offset_x, -offset_y);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
 		pix_mask = imgd.data;
 
 		canvas.width = canvas.width;
 
 		image = new Image();
-		image.onload = drawImageAlpha(canvas, image, pix_mask);
+		image.onload = drawImageAlpha(offset_x, offset_y, canvas, image, pix_mask);
 		image.src = image_src;	
 	};
 	
 }
 
-function drawImageAlpha(canvas, image, pix_mask){
+function drawImageAlpha(offset_x, offset_y, canvas, image, pix_mask){
 	return function(){
-		context.drawImage(image,0,0)
+		context.drawImage(image,-offset_x, -offset_y)
 		context = canvas.getContext('2d')
 		imgd = context.getImageData(0,0,canvas.width, canvas.height);
 		pix = imgd.data;
