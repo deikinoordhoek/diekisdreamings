@@ -83,15 +83,16 @@ function drawImage(i_num, mask, image_src, canvas){
 		canvas.width = canvas.width;
 
 		image = new Image();
-		image.onload = drawImageAlpha(context, image, pix_mask);
+		image.onload = drawImageAlpha(canvas, image, pix_mask);
 		image.src = image_src;	
 	};
 	
 }
 
-function drawImageAlpha(context, image, pix_mask){
+function drawImageAlpha(canvas, image, pix_mask){
 	return function(){
 		context.drawImage(image,0,0)
+		context = canvas.getContext('2d')
 		imgd = context.getImageData(0,0,canvas.width, canvas.height);
 		pix = imgd.data;
 		pix_length = pix.length;
