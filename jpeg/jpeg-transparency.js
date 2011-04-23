@@ -74,7 +74,7 @@ function drawImage(i_num, mask, image_src, canvas){
 		canvas.width = mask.width;
 		canvas.height = mask.height;
 		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width');		
-		if (!!canvas.getAttribute('data-height')) canvas.width = canvas.getAttribute('data-height');
+		if (!!canvas.getAttribute('data-height')) canvas.height = canvas.getAttribute('data-height');
 
 		context.drawImage(mask, 0, 0);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
