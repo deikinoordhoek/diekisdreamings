@@ -1,7 +1,21 @@
 window.onload = function(){
-	images = getImageElements();
-	canvases = addCanvasElements(images);
-	drawCanvasElements(canvases, images);
+	if (!!document.createElement('canvas').getContext){
+		images = getImageElements();
+		canvases = addCanvasElements(images);
+		drawCanvasElements(canvases, images);
+	}
+	else{
+		images = getImageElements();
+		enableFallback(images)
+	}
+}
+
+function enableFallback(images){
+	for (i = 0; i < images.length; i++){
+		if (!!images[i].getAttribute('data-fallback')){
+			images[i].src = images[i].getAttribute('data-fallback');
+		}
+	}
 }
 
 function getImageElements(){
