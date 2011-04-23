@@ -77,9 +77,9 @@ function drawImage(i_num, mask, image_src, canvas){
 		if (!!canvas.getAttribute('data-height')) canvas.height = canvas.getAttribute('data-height');
 		else canvas.height = mask.height;
 
-		if (!!canvas.getAttribute('offset-x')) offset_x = canvas.getAttribute('offset-x');
+		if (!!canvas.getAttribute('data-offset-x')) offset_x = canvas.getAttribute('data-offset-x');
 		else offset_x = 0;
-		if (!!canvas.getAttribute('offset-y')) offset_y = canvas.getAttribute('offset-y');
+		if (!!canvas.getAttribute('data-offset-y')) offset_y = canvas.getAttribute('data-offset-y');
 		else offset_y = 0;
 
 		context.drawImage(mask, -offset_x, -offset_y);	
