@@ -50,7 +50,6 @@ function drawImage(i_num, mask, image, canvas){
 
 	imgd = context.getImageData(0, 0, mask.width, mask.height); 
 	pix_mask = imgd.data;
-	canvas.width = mask.width;
 
 	image.onload = function(){
 		context.drawImage(this,0,0)
