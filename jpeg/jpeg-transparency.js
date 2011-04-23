@@ -32,36 +32,40 @@ function drawCanvasElements(canvas_elements, images){
 	image = new Array()
 	for (i = 0; i < canvas_elements.length;i++){
 		mask[i] = new Image()
-
-		mask[i].onload = drawImage;
+		
+		mask[i].onload = drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
 
 		mask[i].src = images[i].getAttribute('data-mask');
 	}
 }
 
 function drawImage(i_num, mask, image_src, canvas){
-	// Remember, only mask is loaded at this point.
-
-	context = canvas.getContext('2d');
-
-	canvas.width = mask.width;
-	canvas.height = mask.height;
-	context.drawImage(mask, 0, 0);	
-	imgd = context.getImageData(0, 0, mask.width, mask.height); 
-	pix_mask = imgd.data;
-
-	image = new Image();
-	image.onload = drawImageAlpha(context, image, pix_mask);
-	image.src = image_src;	
+	return function(){
+		// Remember, only mask is loaded at this point.
+	
+		context = canvas.getContext('2d');
+	
+		canvas.width = mask.width;
+		canvas.height = mask.height;
+		context.drawImage(mask, 0, 0);	
+		imgd = context.getImageData(0, 0, mask.width, mask.height); 
+		pix_mask = imgd.data;
+	
+		image = new Image();
+		image.onload = drawImageAlpha(context, image, pix_mask);
+		image.src = image_src;	
+	};
 	
 }
 
 function drawImageAlpha(context, image, pix_mask){
-	context.drawImage(image,0,0)
-	imgd = context.getImageData(0,0,image.width, image.height);
-	pix = imgd.data;
-	for (var i=0; i < pix.length; i +=4){
-		pix[i + 3] = pix_mask[i];
+	return function(){
+		context.drawImage(image,0,0)
+		imgd = context.getImageData(0,0,image.width, image.height);
+		pix = imgd.data;
+		for (var i=0; i < pix.length; i +=4){
+			pix[i + 3] = pix_mask[i];
+		}
+		context.putImageData(imgd, 0, 0);
 	}
-	context.putImageData(imgd, 0, 0);
 }
