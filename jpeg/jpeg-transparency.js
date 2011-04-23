@@ -39,7 +39,7 @@ function drawCanvasElements(canvas_elements, images){
 	}
 }
 
-function drawImage(i_num, mask, image-src, canvas){
+function drawImage(i_num, mask, image_src, canvas){
 	// Remember, only mask is loaded at this point.
 	context = canvas.getContext('2d');
 
@@ -52,7 +52,7 @@ function drawImage(i_num, mask, image-src, canvas){
 	pix_mask = imgd.data;
 
 	image = new Image();
-	image.src = images.getAttribute('data-image');
+	image.src = image_src;
 
 	image.onload = function(){
 		context.drawImage(this,0,0)
