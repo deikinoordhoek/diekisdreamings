@@ -18,14 +18,22 @@ function getImageElements(){
 }
 
 function addCanvasElements(images){
+	//Also removes the image elements
 	canvas_elements = new Array();
 	for (i = 0; i < images.length; i++){
 		canvas_element = document.createElement('canvas');
+
+		//Transfer attributes to canvas element
 		for (j = 0; j < images[i].attributes.length; j++){
 			canvas_element.setAttribute(images[i].attributes[j].nodeName, images[i].attributes[j].nodeValue)
 		}
+
 		canvas_elements[i] = canvas_element;
+
+		//Insert the canvas element
 		images[i].parentNode.insertBefore(canvas_elements[i], images[i]);
+
+		//Remove the image element
 		images[i].parentNode.removeChild(images[i]);	
 	}
 	return canvas_elements;
@@ -45,8 +53,10 @@ function drawCanvasElements(canvas_elements, images){
 
 function drawImage(i_num, mask, image_src, canvas){
 	return function(){
-		// Remember, only mask is loaded at this point.
-	
+		//Draw the mask to the canvas, then retrieve the pixel data. 
+		//Pass that to drawImageAlpha, which loads the image and actually draws everything.
+		//This is necessary because events are confusing.
+		
 		context = canvas.getContext('2d');
 	
 		canvas.width = mask.width;
@@ -70,7 +80,7 @@ function drawImageAlpha(context, image, pix_mask){
 		imgd = context.getImageData(0,0,image.width, image.height);
 		pix = imgd.data;
 		for (var i=0; i < pix.length; i +=4){
-			pix[i + 3] = pix_mask[i];
+			pix[i + 3] = pix_mask[i]; //Alpha channel.
 		}
 		context.putImageData(imgd, 0, 0);
 	}
