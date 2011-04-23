@@ -62,6 +62,10 @@ function drawImage(i_num, mask, image_src, canvas){
 }
 
 function drawImageAlpha(context, image, pix_mask){
+	if (image.width == 0){
+		while (image.width == 0){
+		}
+	}
 	context.drawImage(image,0,0)
 	imgd = context.getImageData(0,0,image.width, image.height);
 	pix = imgd.data;
