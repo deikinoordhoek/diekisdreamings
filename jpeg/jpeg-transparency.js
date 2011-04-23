@@ -50,7 +50,9 @@ function drawImage(i_num, mask, image_src, canvas){
 		context.drawImage(mask, 0, 0);	
 		imgd = context.getImageData(0, 0, mask.width, mask.height); 
 		pix_mask = imgd.data;
-	
+
+		canvas.width = canvas.width;
+
 		image = new Image();
 		image.onload = drawImageAlpha(context, image, pix_mask);
 		image.src = image_src;	
