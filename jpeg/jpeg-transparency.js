@@ -51,18 +51,20 @@ function drawImage(i_num, mask, image_src, canvas){
 	imgd = context.getImageData(0, 0, mask.width, mask.height); 
 	pix_mask = imgd.data;
 
-	this.image = new Image();
-	this.image.src = image_src;
+	image = new Image();
+	image.src = image_src;
 
-	this.image.onload = function(){
-		context.drawImage(this,0,0)
-		imgd = context.getImageData(0,0,mask.width, mask.height);
-		pix = imgd.data;
-		for (var i=0; i < pix.length; i +=4){
-			pix[i + 3] = pix_mask[i];
-		}
-		context.putImageData(imgd, 0, 0);
+	image.onload = drawImageAlpha(context, image, pix_mask);
+	
+	
+}
+
+function drawImageAlpha(context, image, pix_mask){
+	context.drawImage(image,0,0)
+	imgd = context.getImageData(0,0,image.width, image.height);
+	pix = imgd.data;
+	for (var i=0; i < pix.length; i +=4){
+		pix[i + 3] = pix_mask[i];
 	}
-	
-	
+	context.putImageData(imgd, 0, 0);
 }
