@@ -45,7 +45,7 @@ function drawImage(i_num, mask, image, canvas){
 	canvas.width = mask.width;
 	canvas.height = mask.height;
 	context.drawImage(mask, 0, 0);	
-	imgd = context.getImageData(0, 0, mask.width, mask.height - 1);
+	imgd = context.getImageData(0, 0, mask.width, mask.height); //I have no clue why I need the - 1. But it makes it work!
 	pix_mask = imgd.data;
 	image.onload = function(){
 		context.drawImage(this,0,0)
