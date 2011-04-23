@@ -41,13 +41,14 @@ function drawCanvasElements(canvas_elements, images){
 
 function drawImage(i_num, mask, image_src, canvas){
 	// Remember, only mask is loaded at this point.
+	alert(i_num);
+	alert(mask.src);
+	alert(image_src);
+
 	context = canvas.getContext('2d');
 
 	canvas.width = mask.width;
 	canvas.height = mask.height;
-	alert(i_num);
-	alert(mask.width);
-	alert(image_src);
 	context.drawImage(mask, 0, 0);	
 	imgd = context.getImageData(0, 0, mask.width, mask.height); 
 	pix_mask = imgd.data;
