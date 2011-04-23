@@ -79,7 +79,8 @@ function drawImageAlpha(context, image, pix_mask){
 		context.drawImage(image,0,0)
 		imgd = context.getImageData(0,0,image.width, image.height);
 		pix = imgd.data;
-		for (var i=0; i < pix.length; i +=4){
+		pix_length = pix.length;
+		for (var i=0; i < pix_length; i +=4){
 			pix[i + 3] = pix_mask[i]; //Alpha channel.
 		}
 		context.putImageData(imgd, 0, 0);
