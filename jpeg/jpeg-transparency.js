@@ -35,7 +35,7 @@ function drawCanvasElements(canvas_elements, images){
 
 		mask[i].src = images[i].getAttribute('data-mask');
 
-		mask[i].onload = new drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
+		mask[i].onload = drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
 	}
 }
 
