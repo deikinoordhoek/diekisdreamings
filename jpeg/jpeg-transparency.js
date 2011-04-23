@@ -71,10 +71,11 @@ function drawImage(i_num, mask, image_src, canvas){
 		//This is necessary because events are confusing.
 		
 		context = canvas.getContext('2d');
-		canvas.width = mask.width;
-		canvas.height = mask.height;
-		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width');		
+
+		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width');
+		else canvas.width = mask.width;
 		if (!!canvas.getAttribute('data-height')) canvas.height = canvas.getAttribute('data-height');
+		else canvas.height = mask.height;
 
 		context.drawImage(mask, 0, 0);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
