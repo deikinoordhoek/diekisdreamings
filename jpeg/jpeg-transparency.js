@@ -26,7 +26,7 @@ function addCanvasElements(images){
 		}
 		canvas_elements[i] = canvas_element;
 		images[i].parentNode.insertBefore(canvas_elements[i], images[i]);
-		
+		images[i].parentNode.removeChild(images[i]);	
 	}
 	return canvas_elements;
 }
