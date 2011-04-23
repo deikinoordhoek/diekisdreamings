@@ -41,7 +41,6 @@ function addCanvasElements(images){
 		for (j = 0; j < images[i].attributes.length; j++){
 			canvas_element.setAttribute(images[i].attributes[j].nodeName, images[i].attributes[j].nodeValue)
 		}
-
 		canvas_elements[i] = canvas_element;
 
 		//Insert the canvas element
@@ -72,11 +71,13 @@ function drawImage(i_num, mask, image_src, canvas){
 		//This is necessary because events are confusing.
 		
 		context = canvas.getContext('2d');
-	
 		canvas.width = mask.width;
 		canvas.height = mask.height;
+		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width')		
+		if (!!canvas.getAttribute('data-height')) canvas.width = canvas.getAttribute('data-height')
+
 		context.drawImage(mask, 0, 0);	
-		imgd = context.getImageData(0, 0, mask.width, mask.height); 
+		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
 		pix_mask = imgd.data;
 
 		canvas.width = canvas.width;
@@ -91,7 +92,7 @@ function drawImage(i_num, mask, image_src, canvas){
 function drawImageAlpha(context, image, pix_mask){
 	return function(){
 		context.drawImage(image,0,0)
-		imgd = context.getImageData(0,0,image.width, image.height);
+		imgd = context.getImageData(0,0,canvas.width, canvas.height);
 		pix = imgd.data;
 		pix_length = pix.length;
 		for (var i=0; i < pix_length; i +=4){
