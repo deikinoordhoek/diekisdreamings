@@ -1,5 +1,5 @@
-window.addEventListener("load",onloadHandler, false);
 
+document.addEventListener("DOMContentLoaded",onloadHandler,false)
 function onloadHandler(){
 	if (!!document.createElement('canvas').getContext){
 		images = getImageElements();
@@ -81,7 +81,7 @@ function drawImage(mask, image_src, canvas){
 		if (!!canvas.getAttribute('data-offset-y')) offset_y = canvas.getAttribute('data-offset-y');
 		else offset_y = 0;
 
-		context.drawImage(mask, -offset_x, -offset_y);	
+		context.drawImage(mask, -offset_x, offset_y);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
 		pix_mask = imgd.data;
 
@@ -96,6 +96,10 @@ function drawImage(mask, image_src, canvas){
 
 function drawImageAlpha(canvas, image, pix_mask){
 	return function(){
+<<<<<<< HEAD
+=======
+		context.drawImage(image,-offset_x, offset_y)
+>>>>>>> 4b405896c8ab185eed257629480dab9b2591ff68
 		context = canvas.getContext('2d')
 		if (!!canvas.getAttribute('data-offset-x')) offset_x = canvas.getAttribute('data-offset-x');
 		else offset_x = 0;
