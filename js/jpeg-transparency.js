@@ -82,7 +82,7 @@ function drawImage(i_num, mask, image_src, canvas){
 		if (!!canvas.getAttribute('data-offset-y')) offset_y = canvas.getAttribute('data-offset-y');
 		else offset_y = 0;
 
-		context.drawImage(mask, -offset_x, -offset_y);	
+		context.drawImage(mask, -offset_x, offset_y);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
 		pix_mask = imgd.data;
 
@@ -97,7 +97,7 @@ function drawImage(i_num, mask, image_src, canvas){
 
 function drawImageAlpha(offset_x, offset_y, canvas, image, pix_mask){
 	return function(){
-		context.drawImage(image,-offset_x, -offset_y)
+		context.drawImage(image,-offset_x, offset_y)
 		context = canvas.getContext('2d')
 		imgd = context.getImageData(0,0,canvas.width, canvas.height);
 		pix = imgd.data;
