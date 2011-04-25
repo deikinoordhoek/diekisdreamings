@@ -1,8 +1,12 @@
-window.onload = function(){
+window.addEventListener("load",onloadHandler, false);
+
+function onloadHandler(){
 	if (!!document.createElement('canvas').getContext){
 		images = getImageElements();
 		canvases = addCanvasElements(images);
-		drawCanvasElements(canvases, images);
+		for (i = 0; i < images.length; i++){		
+			drawCanvasElement(canvases[i], images[i]);
+		}
 	}
 	else{
 		images = getImageElements();
@@ -52,19 +56,14 @@ function addCanvasElements(images){
 	return canvas_elements;
 }
 
-function drawCanvasElements(canvas_elements, images){
-	mask = new Array()
-	image = new Array()
-	for (i = 0; i < canvas_elements.length;i++){
-		mask[i] = new Image()
-		
-		mask[i].onload = drawImage(i, mask[i], images[i].getAttribute('data-image'), canvas_elements[i]);
-
-		mask[i].src = images[i].getAttribute('data-mask');
-	}
+function drawCanvasElement(canvas, image){
+	mask = new Image()
+	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas);
+	mask.src = image.getAttribute('data-mask');
+	
 }
 
-function drawImage(i_num, mask, image_src, canvas){
+function drawImage(mask, image_src, canvas){
 	return function(){
 		//Draw the mask to the canvas, then retrieve the pixel data. 
 		//Pass that to drawImageAlpha, which loads the image and actually draws everything.
@@ -82,29 +81,37 @@ function drawImage(i_num, mask, image_src, canvas){
 		if (!!canvas.getAttribute('data-offset-y')) offset_y = canvas.getAttribute('data-offset-y');
 		else offset_y = 0;
 
-		context.drawImage(mask, -offset_x, offset_y);	
+		context.drawImage(mask, -offset_x, -offset_y);	
 		imgd = context.getImageData(0, 0, canvas.width, canvas.height); 
 		pix_mask = imgd.data;
 
 		canvas.width = canvas.width;
 
 		image = new Image();
-		image.onload = drawImageAlpha(offset_x, offset_y, canvas, image, pix_mask);
+		image.onload = drawImageAlpha(canvas, image, pix_mask);
 		image.src = image_src;	
 	};
 	
 }
 
-function drawImageAlpha(offset_x, offset_y, canvas, image, pix_mask){
+function drawImageAlpha(canvas, image, pix_mask){
 	return function(){
-		context.drawImage(image,-offset_x, offset_y)
 		context = canvas.getContext('2d')
+		if (!!canvas.getAttribute('data-offset-x')) offset_x = canvas.getAttribute('data-offset-x');
+		else offset_x = 0;
+		if (!!canvas.getAttribute('data-offset-y')) offset_y = canvas.getAttribute('data-offset-y');
+		else offset_y = 0;
+
+		context.drawImage(image,-offset_x, -offset_y)
 		imgd = context.getImageData(0,0,canvas.width, canvas.height);
 		pix = imgd.data;
 		pix_length = pix.length;
+
+		//Step through all the image data and apply the mask
 		for (var i=0; i < pix_length; i +=4){
-			pix[i + 3] = pix_mask[i]; //Alpha channel.
+			pix[i + 3] = pix_mask[i];
 		}
+
 		context.putImageData(imgd, 0, 0);
 	}
 }

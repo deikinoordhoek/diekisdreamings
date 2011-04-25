@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<title>Dieki's Dreamings</title>
-		<link rel="stylesheet/less" href="css/index.less" type="text/css"></link>
+		<link rel="stylesheet" href="css/index.css" type="text/css"></link>
 		<link href='http://fonts.googleapis.com/css?family=Merriweather;regular,bold' rel='stylesheet' type='text/css'>
-		<script src="js/less-1.0.41.min.js" type="text/javascript"></script>
-		<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
-		<script src="js/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
 		<script src="js/index.js" type="text/javascript"></script>
 		<script src="js/jpeg-transparency.js" type="text/javascript"></script>
+
+
+
 	</head>
 
 	<body>
@@ -21,41 +21,43 @@
 				<a href="http://contact.diekisdreamings.com"><img src="images/aboutme-link.png" class="navbar-link"></a>
 			</div>
 			<div id = "banner">			
-				<img src="images/banner.png">
+				<img data-fallback="images/banner.png" data-image="images/banner-image.png" data-mask="images/banner-mask.png">
 			</div>
 		</div>
 		<div id = "content">
-			<table id="content-table">
-			<tr>
-				<td>
+				<div id="sidebar">
 					<div id="sidebar-top"></div>
 					<div id="sidebar-corner"></div>
-					<div id ="sidebar">
+					<div id ="sidebar-content">
 						<center><img id="aboutme-title" src="images/aboutme-title.png"></center>
 						<div id="column-1">				
-							<img id="avatar-image" src="images/avatar.png">
+							<img id="avatar-image" data-fallback="images/avatar.png" data-image="images/avatar-image.jpg" data-mask="images/avatar-mask.png">
+							<div id="contact-links">
+								<a id="email-link"><img src="images/email_32.png"></a>
+								<a href="https://profiles.google.com/u/0/117892162542785937531/about"><img src="images/google_32.png"></a>
+								<a href="https://profiles.google.com/u/0/117892162542785937531/buzz"><img src="images/google_buzz_32.png"></a>
+							</div>
 						</div>
 						<div id="column-2">
 							<div id="aboutme-text">
 								<p>I'm <b>Dieki Noordhoek</b>, an artist with a <b>Photoshop</b> portfolio full of <b>Sci-Fi</b> and <b>Fantasy</b> artwork. 
 								<p>You can find all  my best artwork on my <b>portfolio</b>, to the right. 
 								<p>I also have a <b>blog</b> where I post recent projects, and a <b>resources page</b> with a few things other artists will find useful.  
-								<p>So <b>have a look!</b> And if you want to get in touch, use one of the links on the right.
+								<p>So <b>have a look!</b> And if you want to get in touch, use one of the links on the left.
 							</div>
 						</div>
 					</div>
 					<div id="sidebar-right"></div>
 					<div id="sidebar-bottom"></div>
 					<div id="sidebar-bottom-corner"></div>
-				</td>
-				<td>
-					<div id ="links">
-						<a href="portfolio"><img data-fallback="images/portfolio-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184"></a>
-						<a href="http://blog.diekisdreamings.com"><img data-fallback="images/blog-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184" data-offset-y="184"></a>
-						<a href="resources"><img data-fallback="images/resources-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184" data-offset-y="368"></a>
-					</div>
-				</td>
-			</tr>
+				</div>
+				<div id ="links">
+
+					<a href="portfolio"><img data-fallback="images/portfolio-bar-small.png" data-image="images/portfolio-bars-small.jpg" data-mask="images/portfolio-mask-small.png" id="portfolio-bar" class="bar-image" data-height="168"></a>
+					<a href="http://blog.diekisdreamings.com"><img data-fallback="images/blog-bar-small.png" data-image="images/portfolio-bars-small.jpg" data-mask="images/portfolio-mask-small.png" id="portfolio-bar" class="bar-image" data-height="168" data-offset-y="168"></a>
+					<a href="resources"><img data-fallback="images/resources-bar-small.png" data-image="images/portfolio-bars-small.jpg" data-mask="images/portfolio-mask-small.png" id="portfolio-bar" class="bar-image" data-height="168" data-offset-y="336"></a>
+				</div>
+				<div class="clear">
 		</div>
 		<div id = "footer">
 		</div>

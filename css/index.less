@@ -38,8 +38,11 @@ body{
 }
 
 #content{margin-top: 50px;}
-
 #sidebar{
+	float: left;
+}
+
+#sidebar-content{
 	width: @sidebar-width;
 	float: left;
 }
@@ -89,11 +92,16 @@ body{
 		font-size: 17px;
 	}
 }
-#links{width: 680px;}
-#portfolio-bar, #blog-bar, #resources-bar{ margin-left: 40px;}
+#links{
+	width: 680px  * 2 + 60; 
+	float: right;
+	margin-right: 60px;
+
+}
+
 .bar-image{
 	margin-bottom: 7px;
-	margin-left: 15px;
+	margin-left: 40px;
 }
 
 #content-table{
@@ -102,3 +110,23 @@ body{
 a img{ 
 	border: 0; 
 }
+#links-left{
+	float:left;
+	width: 680px;
+}
+#links-right{
+	float:right;
+	width: 680px;
+}
+.clear{
+	clear:both;
+}
+#contact-links{
+	margin-left: 10px;
+	margin-top: 5px;
+	img{
+		margin-right: 15px;
+	}
+}
+
+
