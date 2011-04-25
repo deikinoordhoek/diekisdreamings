@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded",onloadHandler, false);
+
 
 function onloadHandler(){
 	if (!!document.createElement('canvas').getContext){

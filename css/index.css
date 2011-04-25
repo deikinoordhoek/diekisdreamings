@@ -2,7 +2,7 @@
 #sidebar-top { background-image: url('../images/sidebar-border-top.png'); }
 .bar-image { margin-bottom: 7px; margin-left: 40px; }
 #links-left { width: 680px; float: left; }
-body { margin: 0; background: #242424 url('../images/background.jpg') no-repeat; }
+body { margin: 0; background: #242424 url('../images/background.jpg') no-repeat center; }
 #aboutme-title { margin-bottom: 10px; }
 #contact-links img { margin-right: 15px; }
 #contact-links { margin-top: 5px; margin-left: 10px; }

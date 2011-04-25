@@ -1,4 +1,13 @@
-window.addEventListener("DOMContentLoaded",function(){
+//Fires onloadHandler when DOMContentLoaded happens.
+(function(i) {var u =navigator.userAgent;var e=/*@cc_on!@*/false; var st = 
+setTimeout;if(/webkit/i.test(u)){st(function(){var dr=document.readyState;
+if(dr=="loaded"||dr=="complete"){i()}else{st(arguments.callee,10);}},10);}
+else if((/mozilla/i.test(u)&&!/(compati)/.test(u)) || (/opera/i.test(u))){
+document.addEventListener("DOMContentLoaded",i,false); } else if(e){     (
+function(){var t=document.createElement('doc:rdy');try{t.doScroll('left');
+i();t=null;}catch(e){st(arguments.callee,0);}})();}else{window.onload=i;}})(init);
+
+function init(){
 	if (window.innerWidth >= 1920) {
 		document.getElementById("links").innerHTML = '<div id="links-left"> <a href="portfolio"><img data-fallback="images/portfolio-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184"></a><img data-fallback="images/blank-banner.png" data-image="images/blank-banner-image.png" data-mask="images/blank-banner-mask.png" class="bar-image"><a href="resources"><img data-fallback="images/resources-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184" data-offset-y="368"></a></div><div id="links-right"><img data-fallback="images/blank-banner.png" data-image="images/blank-banner-image.png" data-mask="images/blank-banner-mask.png" class="bar-image">						<a href="http://blog.diekisdreamings.com"><img data-fallback="images/blog-bar.png" data-image="images/portfolio-bars.jpg" data-mask="images/portfolio-mask.png" id="portfolio-bar" class="bar-image" data-height="184" data-offset-y="184"></a><img data-fallback="images/blank-banner.png" data-image="images/blank-banner-image.png" data-mask="images/blank-banner-mask.png" class="bar-image"></div><div class="clear"></div>'
 	}
@@ -13,7 +22,8 @@ window.addEventListener("DOMContentLoaded",function(){
 		document.getElementById("links").style.marginRight = "120px";
 	}
 	document.getElementById('email-link').href="mailto:" + retrieveEmail();
-}, false);
+	onloadHandler();
+}
 
 function retrieveEmail(){
 	return 'qvrxv@qvrxvfqernzvatf.pbz'.replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
