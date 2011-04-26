@@ -24,7 +24,7 @@ body { margin: 0; background: #292929 url('../images/background-banner.jpg') no-
 
 #contact-links { margin-top: 15px; margin-left: 10px; }
 #aboutme-text b { font-size: 17px; }
-#aboutme-text { text-shadow: 0px 2px 1px rgba(0,0,0,.58); font-size: 15px; font-family: 'Merriweather', 'ChocolateBox'; color: #e0e0e0; }
+#aboutme-text { text-shadow: 0px 2px 1px rgba(0,0,0,.58); font-size: 15px; font-family: 'Merriweather', arial, serif; color: #e0e0e0; }
 
 a img { border: 0; }
 a { color: #bbbbbb;}
