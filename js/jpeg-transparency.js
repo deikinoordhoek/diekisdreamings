@@ -1,8 +1,36 @@
+//Detect WebP support
+
+function handleImages(support_webp){
+	image_list = document.getElementsByTagName("img");
+	for (i = 0; i < image_list.length; i++){
+		if (image_list[i].getAttribute("data-src-webp") && support_webp == true){
+			image_list[i].src = image_list[i].getAttribute("data-src-webp")
+		}
+		else if (image_list[i].getAttribute("data-src")){
+			image_list[i].src = image_list[i].getAttribute("data-src")
+		}
+	}
+}
 
 
 function onloadHandler(){
+	//Detect WebP support	
+	var div = document.createElement('div');
+	div.innerHTML = '<img id = "test_image" src="data:image/webp,RIFF*%00%00%00WEBPVP8%20%1E%00%00%00%10%02%00%9D%01*%04%00%04%00%0B%C7%08%85%85%88%85%84%88%3F%82%00%0C%0D%60%00%FE%E6%B5%00">';
+	webp_test = div.firstChild;
+	div.firstChild.onerror = function(){stageTwoLoad(false)}
+	div.firstChild.onload = function(){stageTwoLoad(true)}
+
+	var webp_opera_test = new Image();
+	webp_opera_test.src = "data:image/webp,RIFF*%00%00%00WEBPVP8%20%1E%00%00%00%10%02%00%9D%01*%04%00%04%00%0B%C7%08%85%85%88%85%84%88%3F%82%00%0C%0D%60%00%FE%E6%B5%00"
+	webp_opera_test.onerror = function(){stageTwoLoad(false)}
+	webp_opera_test.onload = function(){stageTwoLoad(true)}
+
+}
+
+function stageTwoLoad(webp){
 	if (!!document.createElement('canvas').getContext){
-		images = getImageElements();
+		images = getImageElements(webp);
 		canvases = addCanvasElements(images);
 		for (i = 0; i < images.length; i++){		
 			drawCanvasElement(canvases[i], images[i]);
@@ -10,8 +38,9 @@ function onloadHandler(){
 	}
 	else{
 		images = getImageElements();
-		enableFallback(images)
+		enableFallback(images);
 	}
+	
 }
 
 function enableFallback(images){
@@ -22,12 +51,13 @@ function enableFallback(images){
 	}
 }
 
-function getImageElements(){
+function getImageElements(webp){
 	images = new Array();
 	num_images = 0;
 	all_images = document.getElementsByTagName("img");
 	for (i = 0; i < all_images.length; i++){
 		if (all_images[i].getAttribute("data-image") && all_images[i].getAttribute("data-mask")){
+			if (webp == true && !!all_images[i].getAttribute("data-image-webp"))  all_images[i].setAttribute("data-image", all_images[i].getAttribute("data-image-webp"));
 			images[num_images] = all_images[i];
 			num_images++;
 		}
