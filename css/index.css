@@ -1,20 +1,16 @@
 html {
-	background: #323232 url('../images/noise.png');
+	background: #222222 url('../images/noise.png');
 
 }
-body { margin: 0; background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.0, rgba(0,0,0, 0)),
-    color-stop(1, rgba(255,255,255,.1))
-);
+body { margin: 0; background: -webkit-gradient(radial, center 10%, 0, center 10%, 800, from(rgba(255,255,255,.2)), to(rgba(0,0,0,0)));
 background-repeat: no-repeat;
 background-position: center top;
-background-image: -moz-linear-gradient(
-    center bottom,
-    rgba(0,0,0,0) 0%,
-    rgba(255,255,255,.15) 100%
+background-image: -moz-radial-gradient(
+    center 20% 0deg,
+    circle cover,
+    rgba(255,255,255,.2) 0%,
+    rgba(0,0,0,0) 100%
+
 );}
 
 
