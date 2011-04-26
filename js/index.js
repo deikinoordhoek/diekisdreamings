@@ -39,10 +39,10 @@ function retrieveEmail(){
 function handleImages(support_webp){
 	image_list = document.getElementsByTagName("img");
 	for (i = 0; i < image_list.length; i++){
-		if (image_list[i].getAttribute("data-src-webp") && support_webp == true){
+		if (!!image_list[i].getAttribute("data-src-webp") && support_webp == true){
 			image_list[i].src = image_list[i].getAttribute("data-src-webp")
 		}
-		else if (image_list[i].getAttribute("data-src")){
+		else if (!!image_list[i].getAttribute("data-src")){
 			image_list[i].src = image_list[i].getAttribute("data-src")
 		}
 	}

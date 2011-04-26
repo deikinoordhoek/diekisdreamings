@@ -25,7 +25,7 @@ background-image: -moz-radial-gradient(
 #banner { margin: 40px auto 0px; width: 900px; }
 
 #sidebar-top { background-image: url('../images/spriteme2.png'); background-repeat: repeat-x; background-position: 0% -87px;  }
-#sidebar-right { background-image: url('data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%1D%00%00%00%01%08%06%00%00%00%22%87%A5%EF%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%006IDATx%DAb%BC%7C%F9r%A6%B3%B3%F34%26%26%26%06%10fdd%84%D3%C8%18%06%90%D90%F0%FF%FF%7F%1462%FE%F7%EF%1F%9C%06%E1%BD%7B%F7f%01%04%18%00y%0E!%E4%98%0COX%00%00%00%00IEND%AEB%60%82'); background-repeat: repeat-y; height: 400px; margin-left: 392px; width: 29px; }
+#sidebar-right { background-image: url('data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%1D%00%00%00%01%08%06%00%00%00%22%87%A5%EF%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%006IDATx%DAb%BC%7C%F9r%A6%B3%B3%F34%26%26%26%06%10fdd%84%D3%C8%18%06%90%D90%F0%FF%FF%7F%1462%FE%F7%EF%1F%9C%06%E1%BD%7B%F7f%01%04%18%00y%0E!%E4%98%0COX%00%00%00%00IEND%AEB%60%82'); background-repeat: repeat-y; height: 440px; margin-left: 392px; width: 29px; }
 #sidebar-bottom-corner, #sidebar-corner { height: 37px; margin-left: 380px; width: 41px;  }
 #sidebar { float: left; background-color: #333; border-radius: 5px; }
 #sidebar-content { float: left; width: 380px; }
@@ -53,10 +53,10 @@ a:hover {color: #ffffff; text-shadow: 0px 0px 3px rgba(255,255,255,.7);}
 	margin-top: -13px;
 }
 #email-link-image{
-	background: url('../images/spriteme1.png') no-repeat;
-	width: 122px;
-	height: 19px;
-	background-position: -10px -67px;
+	background: url('../images/contact-me-button.png') no-repeat;
+	width: 212px;
+	height: 62px;
+	margin-top: 25px;
 }
 
 #navbar-link-home{
