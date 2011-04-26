@@ -1,6 +1,6 @@
-body { margin: 0; background: #242424 url('../images/background.jpg') no-repeat center; }
+body { margin: 0; background: #292929 url('../images/background-banner.jpg') no-repeat center top ;}
 #header { width: 100%; }
-#content { margin-top: 50px; }
+#content { margin-top: 240px; }
 
 .bar-image { margin-bottom: 7px; margin-left: 40px; }
 #links-left { width: 680px; float: left; }
