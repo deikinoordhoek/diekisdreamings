@@ -1,15 +1,12 @@
 html {
 	background: #222222 url('../images/noise.png');
-
 }
-body { margin: 0; background: -webkit-gradient(radial, center 10%, 0, center 10%, 800, from(rgba(255,255,255,.2)), to(rgba(0,0,0,0)));
-background-repeat: no-repeat;
-background-position: center top;
+body { margin: 0; background: -webkit-gradient(radial, center 10%, 0, center 10%, 800, from(rgba(255,255,255,.2)), to(rgba(255,255,255,0)));
 background-image: -moz-radial-gradient(
     center 20% 0deg,
     circle cover,
     rgba(255,255,255,.2) 0%,
-    rgba(0,0,0,0) 100%
+    rgba(255,255,255,0) 100%
 
 );}
 
