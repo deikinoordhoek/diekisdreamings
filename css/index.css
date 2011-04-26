@@ -1,6 +1,25 @@
-body { margin: 0; background: #323232 url('../images/background-banner-2.png') no-repeat center 80px ;}
+html {
+	background: #323232 url('../images/noise.png');
+
+}
+body { margin: 0; background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.0, rgba(0,0,0, 0)),
+    color-stop(1, rgba(255,255,255,.1))
+);
+background-repeat: no-repeat;
+background-position: center top;
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(255,255,255,.15) 100%
+);}
+
+
 #header { width: 100%; }
-#content { margin-top: 230px; }
+#content { margin-top: 60px; }
 
 .bar-image { margin-bottom: 7px; margin-left: 40px; }
 #links-left { width: 680px; float: left; }
@@ -8,7 +27,7 @@ body { margin: 0; background: #323232 url('../images/background-banner-2.png') n
 #links { margin-right: 60px; float: right; width: 680px  * 62; }
 
 #column-1 { float: left; width: 160px; }
-#column-2 { width: 200px; margin-left: 170px; }
+#column-2 { margin-left: 170px; }
 #navbar { background: url('../images/spriteme2.png') repeat-x; padding-top: 15px; height: 42px; background-position: 0% -10px; }
 #banner { margin: 40px auto 0px; width: 900px; }
 
@@ -24,7 +43,9 @@ body { margin: 0; background: #323232 url('../images/background-banner-2.png') n
 
 #contact-links { margin-top: 15px; margin-left: 10px; }
 
-
+#aboutme-text{
+	margin-top: 5px;
+}
 a img { border: 0; }
 a { color: #bbbbbb; text-shadow: 0px 0px 3px rgba(255,255,255,.2);}
 a:hover {color: #ffffff; text-shadow: 0px 0px 3px rgba(255,255,255,.7);}
