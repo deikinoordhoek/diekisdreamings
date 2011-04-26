@@ -70,7 +70,7 @@ function stageTwoLoad(webp){
 		}
 	}
 	else{
-		images = getImageElements();
+		images = getImageElements(false);
 		enableFallback(images);
 	}
 	
