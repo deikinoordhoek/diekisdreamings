@@ -23,12 +23,12 @@ body { margin: 0; background: #292929 url('../images/background-banner.jpg') no-
 #sidebar-bottom-corner { background-image: url('../images/spriteme1.png'); background-repeat: no-repeat; background-position: -10px -106px; }
 
 #contact-links { margin-top: 15px; margin-left: 10px; }
-#aboutme-text b { font-size: 17px; }
-#aboutme-text { text-shadow: 0px 2px 1px rgba(0,0,0,.58); font-size: 15px; font-family: 'Merriweather', arial, serif; color: #e0e0e0; }
+#aboutme-text b { font-size: 16px;  }
+#aboutme-text { text-shadow: 0px 2px 1px rgba(0,0,0,.58); font-size: 15px; font-family: 'Vollkorn', arial, serif; color: #e0e0e0;  line-height: 1.2;}
 
 a img { border: 0; }
-a { color: #bbbbbb;}
-a:hover {color: #ffffff;}
+a { color: #bbbbbb; text-shadow: 0px 0px 3px rgba(255,255,255,.2);}
+a:hover {color: #ffffff; text-shadow: 0px 0px 3px rgba(255,255,255,.7);}
 
 
 .clear { clear: both; }
