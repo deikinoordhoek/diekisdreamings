@@ -9,18 +9,18 @@ body { margin: 0; background: #292929 url('../images/background-banner.jpg') no-
 
 #column-1 { float: left; width: 160px; }
 #column-2 { width: 200px; margin-left: 170px; }
-#navbar { background: url('../images/navbar-background.png') repeat-x; padding-top: 15px; height: 42px; }
+#navbar { background: url('../images/spriteme2.png') repeat-x; padding-top: 15px; height: 42px; background-position: 0% -10px; }
 #banner { margin: 40px auto 0px; width: 900px; }
 
-#sidebar-top { background-image: url('../images/sidebar-border-top.png'); background-repeat: repeat-x;   }
+#sidebar-top { background-image: url('../images/spriteme2.png'); background-repeat: repeat-x; background-position: 0% -87px;  }
 #sidebar-right { background-image: url('../images/sidebar-border-right.png'); background-repeat: repeat-y; height: 500px; margin-left: 392px; width: 29px; }
 #sidebar-bottom-corner, #sidebar-corner { height: 37px; margin-left: 380px; width: 41px;  }
 #sidebar { float: left; }
 #sidebar-content { float: left; width: 380px; }
 #sidebar-bottom, #sidebar-top { height: 25px; float: left; width: 380px; }
-#sidebar-bottom { margin-top: 12px; background-image: url('../images/sidebar-border-top.png'); background-repeat: repeat-x; }
-#sidebar-corner { background-image: url('../images/sidebar-border-corner.png'); background-repeat: no-repeat; }
-#sidebar-bottom-corner { background-image: url('../images/sidebar-border-bottom-corner.png'); background-repeat: no-repeat;  }
+#sidebar-bottom { margin-top: 12px; background-image: url('../images/spriteme2.png'); background-repeat: repeat-x; background-position: 0% -87px; }
+#sidebar-corner { background-image: url('../images/spriteme1.png'); background-repeat: no-repeat; background-position: -10px -10px; }
+#sidebar-bottom-corner { background-image: url('../images/spriteme1.png'); background-repeat: no-repeat; background-position: -10px -106px; }
 
 #contact-links { margin-top: 15px; margin-left: 10px; }
 #aboutme-text b { font-size: 17px; }
@@ -40,33 +40,38 @@ a:hover {color: #ffffff;}
 	margin-top: -13px;
 }
 #email-link-image{
-	background: url('../images/email-me.png') no-repeat;
+	background: url('../images/spriteme1.png') no-repeat;
 	width: 122px;
 	height: 19px;
+	background-position: -10px -67px;
 }
 
 #navbar-link-home{
-	background: url('../images/home.png') no-repeat;
+	background: url('../images/spriteme1.png') no-repeat;
 	width: 90px;
 	height: 25px;
 	margin-left: -20px;
+	background-position: -10px -163px;
 }
 
 
 #navbar-link-blog{
-	background: url('../images/blog-link.png') no-repeat;
+	background: url('../images/spriteme1.png') no-repeat;
 	width: 78px;
 	height: 26px;
+	background-position: -10px -208px;
 }
 
 #navbar-link-portfolio{
-	background: url('../images/portfolio-link.png') no-repeat;
+	background: url('../images/spriteme1.png') no-repeat;
 	width: 157px;
 	height: 26px;
+	background-position: -10px -254px;
 }
 
 #navbar-link-resources{
-	background: url('../images/resources.png') no-repeat;
+	background: url('../images/spriteme1.png') no-repeat;
 	width: 172px;
 	height: 27px;
+	background-position: -10px -300px;
 }
