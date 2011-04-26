@@ -22,6 +22,7 @@ function init(){
 		document.getElementById("links").style.marginRight = "120px";
 	}
 	document.getElementById('email-link').href="mailto:" + retrieveEmail();
+	document.getElementById('email-link-2').href="mailto:" + retrieveEmail();
 	onloadHandler();
 }
 
