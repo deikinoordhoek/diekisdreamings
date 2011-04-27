@@ -1,18 +1,3 @@
-//Detect WebP support
-
-function handleImages(support_webp){
-	image_list = document.getElementsByTagName("img");
-	for (i = 0; i < image_list.length; i++){
-		if (image_list[i].getAttribute("data-src-webp") && support_webp == true){
-			image_list[i].src = image_list[i].getAttribute("data-src-webp")
-		}
-		else if (image_list[i].getAttribute("data-src")){
-			image_list[i].src = image_list[i].getAttribute("data-src")
-		}
-	}
-}
-
-
 function onloadHandler(){
 	//Detect WebP support	
 	var div = document.createElement('div');
@@ -37,7 +22,7 @@ function stageTwoLoad(webp){
 		}
 	}
 	else{
-		images = getImageElements();
+		images = getImageElements(false);
 		enableFallback(images);
 	}
 	
