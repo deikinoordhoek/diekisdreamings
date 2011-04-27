@@ -1,0 +1,70 @@
+html {
+	background: #222222 url('../images/noise.png');
+	height: 100%;
+}
+body { 
+	margin: 0; 
+	background: -webkit-gradient(radial, center 10%, 0, center 10%, 800, from(rgba(255,255,255,.2)), to(rgba(255,255,255,0)));
+	background: -moz-radial-gradient(center 20% 0deg, circle cover, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%);
+	height: 100%;
+}
+#navbar { background: url('../images/spriteme2.png') repeat-x; padding-top: 15px; height: 42px; background-position: 0% -10px; }
+#navlist li {
+	display: block;
+	float: left;
+	list-style-type: none;
+	padding-right: 30px;
+	margin-top: -13px;
+}
+#email-link-image{
+	background: url('../images/contact-me-button.png') no-repeat;
+	width: 212px;
+	height: 62px;
+	margin-top: 25px;
+}
+
+#navbar-link-home{
+	background: url('../images/spriteme1.png') no-repeat;
+	width: 90px;
+	height: 25px;
+	margin-left: -20px;
+	background-position: -10px -163px;
+}
+
+
+#navbar-link-blog{
+	background: url('../images/spriteme1.png') no-repeat;
+	width: 78px;
+	height: 26px;
+	background-position: -10px -208px;
+}
+
+#navbar-link-portfolio{
+	background: url('../images/spriteme1.png') no-repeat;
+	width: 157px;
+	height: 26px;
+	background-position: -10px -254px;
+}
+
+#navbar-link-resources{
+	background: url('../images/spriteme1.png') no-repeat;
+	width: 172px;
+	height: 27px;
+	background-position: -10px -300px;
+}
+
+#banner{
+	margin: 40px auto 0;
+}
+
+#content{
+	margin:80px auto 0;
+}
+
+#fantasy-banner{
+	display: none;
+}
+
+#scifi-banner{
+	display: none;
+}
