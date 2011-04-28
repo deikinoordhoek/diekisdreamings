@@ -8,9 +8,14 @@
 	<head>
 		<title>Dieki's Dreamings | Portfolio</title>
 		<link rel="stylesheet" href="css/portfolio.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		<script src="js/jpeg-transparency.js" type="text/javascript"></script>
+		<script src="js/portfolio-images.js" type="text/javascript"></script>
 		<script src="js/portfolio.js" type="text/javascript"></script>
-		<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="fancybox/jquery.easing-1.3.pack.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+		<link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
 	</head>
 	<body>
@@ -27,9 +32,14 @@
 		<center><img id="banner" src="images/portfolio-banner.png"></center>
 		<div id = "content">
 			<center>
-				<a href="portfolio/fantasy.html"> <img id="fantasy-banner" src="images/fantasy-banner.png"> </a>
-				<br>
-				<a href="portfolio/scifi.html"> <img id="scifi-banner"  src="images/sci-fi-banner.png"></a>
+				<div id="main-images">
+					<a href="#" onclick="showFantasy();"> <img id="fantasy-banner" src="images/fantasy-banner.png"> </a>
+					<a href="portfolio/scifi.html"> <img id="scifi-banner"  src="images/sci-fi-banner.png"></a>
+				</div>
+				<div id="fantasy-images">
+				</div>
+				<div id="sci-fi-images">
+				</div>
 			</center>
 		</div>
 	</body>

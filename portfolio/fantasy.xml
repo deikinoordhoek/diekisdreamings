@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<manifest>
+	<image>
+		<thumbnail>thumbnails/ring-of-evil.png</thumbnail>
+		<fullsize>fullsize/ring-of-evil.jpg</fullsize>
+		<image_title>Ring of Evil</image_title>
+	</image>
+	<image>
+		<thumbnail>thumbnails/magical-forest.png</thumbnail>
+		<fullsize>fullsize/magical-forest.jpg</fullsize>
+		<image_title>Magical Forest</image_title>
+	</image>
+	<image>
+		<thumbnail>thumbnails/darkness-surrounding.png</thumbnail>
+		<fullsize>fullsize/darkness-surrounding.jpg</fullsize>
+		<image_title>Darkness Surrounding</image_title>
+	</image>
+</manifest>
