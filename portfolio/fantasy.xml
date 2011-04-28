@@ -4,15 +4,50 @@
 		<thumbnail>thumbnails/ring-of-evil.png</thumbnail>
 		<fullsize>fullsize/ring-of-evil.jpg</fullsize>
 		<image_title>Ring of Evil</image_title>
+		<credits></credits>
 	</image>
 	<image>
 		<thumbnail>thumbnails/magical-forest.png</thumbnail>
 		<fullsize>fullsize/magical-forest.jpg</fullsize>
 		<image_title>Magical Forest</image_title>
+		<credits></credits>
 	</image>
+	<image>
+		<thumbnail>thumbnails/death.png</thumbnail>
+		<fullsize>fullsize/death.jpg</fullsize>
+		<image_title>Death</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>thumbnails/evanescense.png</thumbnail>
+		<fullsize>fullsize/evanescense.jpg</fullsize>
+		<image_title>Evanescense</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>thumbnails/sword-of-ice.png</thumbnail>
+		<fullsize>fullsize/sword-of-ice.jpg</fullsize>
+		<image_title>Sword of Ice</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>thumbnails/lantern-waste.png</thumbnail>
+		<fullsize>fullsize/lantern-waste.jpg</fullsize>
+		<image_title>Lantern Waste</image_title>
+		<credits></credits>
+	</image>
+	
 	<image>
 		<thumbnail>thumbnails/darkness-surrounding.png</thumbnail>
 		<fullsize>fullsize/darkness-surrounding.jpg</fullsize>
 		<image_title>Darkness Surrounding</image_title>
+		<credits></credits>
+	</image>
+
+	<image>
+		<thumbnail>thumbnails/frozen-gateway.png</thumbnail>
+		<fullsize>fullsize/frozen-gateway.jpg</fullsize>
+		<image_title>Frozen Gateway</image_title>
+		<credits></credits>
 	</image>
 </manifest>

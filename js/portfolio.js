@@ -12,7 +12,7 @@ window.onload = displayImages;
 function init() {
 	onloadHandler();
 	$("a.portfolio_image").fancybox({
-		'transitionIn'	     :	'elastic',
+		'transitionIn'	     :	'fade',
 		'transitionOut'	     :	'fade',
 		'opacity'            :  'true',
 		'overlayOpacity'     :  '.75',
@@ -38,6 +38,7 @@ function displayImages(){
 		a.href = fantasy_data[i].fullsize.image.src;
 		a.setAttribute("class", "portfolio_image");
 		a.setAttribute("title", fantasy_data[i].image_title);
+		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[i].fullsize.image.src + ']);');
 		a.appendChild(fantasy_data[i].thumbnail.image);
 		fantasy_div.appendChild(a);
 	}
@@ -48,3 +49,4 @@ function showFantasy(){
 	$("#scifi-banner").fadeOut();
 	$("#fantasy-images").delay(500).fadeIn();
 }
+

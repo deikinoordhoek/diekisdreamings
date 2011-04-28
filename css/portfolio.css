@@ -92,3 +92,8 @@ body {
         border-radius: 0px 0px 10px 10px; 
 	color: #fff;
 }
+
+#fantasy-title{
+	margin-bottom: 50px !important;
+	margin-top: -20px;
+}
