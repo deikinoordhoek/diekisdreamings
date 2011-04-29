@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-color: #444;
+			}
+			@font-face {
+			    font-family: 'ChocolateBoxRegular';
+			    src: url('c_box-webfont.eot?') format('eot'),
+			         url('c_box-webfont.woff') format('woff'),
+			         url('c_box-webfont.ttf') format('truetype'),
+			         url('c_box-webfont.svg#webfontuxrJgxaE') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+
+			}
+			#force-font-load-text {
+				font-family: ChocolateBoxRegular;
+				visibility: hidden;
+			}
+		</style>
+		<script src="main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="portfolio-image">
+			<canvas id="portfolio-image-canvas" width=680 height=180></canvas>
+			<img id="original" src="original.png">
+		</div>
+		<div id="force-font-load-text">If you see this, scream 'cause there's no CSS.</div>
+	</body>
+</html>
