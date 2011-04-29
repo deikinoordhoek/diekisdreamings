@@ -11,7 +11,7 @@ window.onload = displayImages;
 
 function init() {
 	onloadHandler();
-	$("a.portfolio_image").fancybox({
+	$("a.portfolio-image").fancybox({
 		'transitionIn'	     :	'fade',
 		'transitionOut'	     :	'fade',
 		'opacity'            :  'true',
@@ -36,9 +36,10 @@ function displayImages(){
 	for (i = 0; i < fantasy_data.length; i++){
 		a = document.createElement('a');
 		a.href = fantasy_data[i].fullsize.image.src;
-		a.setAttribute("class", "portfolio_image");
+		a.setAttribute("class", "portfolio-image");
 		a.setAttribute("title", fantasy_data[i].image_title);
 		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[i].fullsize.image.src + ']);');
+		fantasy_data[i].thumbnail.image.setAttribute("class", "portfolio-image");
 		a.appendChild(fantasy_data[i].thumbnail.image);
 		fantasy_div.appendChild(a);
 	}

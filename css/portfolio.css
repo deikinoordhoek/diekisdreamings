@@ -73,7 +73,7 @@ body {
 	margin: 0 auto;
 	width: 900px;
 }
-#fantasy-images img{
+.portfolio-image{
 	margin-bottom: 30px;
 }
 #main-images{
@@ -94,6 +94,19 @@ body {
 }
 
 #fantasy-title{
-	margin-bottom: 50px !important;
+	margin-bottom: 50px;
 	margin-top: -20px;
 }
+#dragon-left{
+	margin-bottom: 50px;
+}
+#dragon-right{
+	margin-bottom: 50px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
