@@ -1,34 +1,3 @@
-function portfolioPiece(fullsize_url, ie_thumbnail_url, thumbnail_url, image_title, topX, topY, width, height){
-	this.fullsize = new portfolioImage(fullsize_url);
-	if (!topX) {
-		this.thumbnail = new portfolioThumbnail(ie_thumbnail_url, thumbnail_url, image_title);
-	}
-	else {
-		this.thumbnail = new portfolioThumbnail(ie_thumbnail_url, thumbnail_url, image_title, topX, topY, width, height)
-	}
-	this.image_title = image_title;
-}
-
-function portfolioImage (url){
-	this.url = url;
-	this.image = new Image();	
-}
-
-function portfolioThumbnail (url, plain_url, title, topX, topY, width, height){
-	this.ie_url = url;
-	this.ie_image = new Image();
-	this.plain_url = plain_url;
-	this.image = new Image();
-	this.title = title;
-	this.drawOnCanvas = drawOnCanvas;
-	if (!!topX){
-		this.topX = topX;
-		this.topY = topY;
-		this.width = width;
-		this.height = height;
-	}
-
-}
 function getPortfolioManifest(manifest_file){
 	var req = new XMLHttpRequest();
 	req.open('GET', manifest_file, false)
@@ -66,7 +35,7 @@ function loadPortfolio(manifest_file){
 	portfolio_data = getImageData(manifest);
 	for (i = 0; i < portfolio_data.length; i++){
 		//portfolio_data[i].thumbnail.ie_image.src = "portfolio/" + portfolio_data[i].thumbnail.ie_url;
-		portfolio_data[i].fullsize.image.src = "portfolio/" + portfolio_data[i].fullsize.url;
+		portfolio_data[i].fullsize.image.src = "portfolio/images/" + portfolio_data[i].fullsize.url;
 	}
 	return portfolio_data;
 }
@@ -76,12 +45,7 @@ function drawOnCanvas(canvas, webp) {
 	canvas.width = 680;
 	canvas.height = 180;
 	i = this.image;
-	if (webp) {
-		i.src= "portfolio/" + this.webp_url;
-	}
-	else {
-		i.src = "portfolio/" + this.plain_url;
-	}
+	i.src = "portfolio/images/" + this.plain_url;
 	i.onload = constructPortfolioDisplay(this, context);
 	
 

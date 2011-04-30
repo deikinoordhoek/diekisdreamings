@@ -8,7 +8,7 @@
     font-style: normal;
 }
 html {
-	background: #222222 url('../images/noise.png');
+	background: #222222 url('../../images/noise.png');
 	height: 100%;
 }
 body { 
@@ -18,7 +18,7 @@ body {
 	height: 100%;
 	overflow-x:hidden;
 }
-#navbar { background: url('../images/spriteme2.png') repeat-x; padding-top: 15px; height: 42px; background-position: 0% -10px; }
+#navbar { background: url('../../images/spriteme2.png') repeat-x; padding-top: 15px; height: 42px; background-position: 0% -10px; }
 #navlist li {
 	display: block;
 	float: left;
@@ -26,15 +26,8 @@ body {
 	padding-right: 30px;
 	margin-top: -13px;
 }
-#email-link-image{
-	background: url('../images/contact-me-button.png') no-repeat;
-	width: 212px;
-	height: 62px;
-	margin-top: 25px;
-}
-
 #navbar-link-home{
-	background: url('../images/spriteme1.png') no-repeat;
+	background: url('../../images/spriteme1.png') no-repeat;
 	width: 90px;
 	height: 25px;
 	margin-left: -20px;
@@ -43,14 +36,14 @@ body {
 
 
 #navbar-link-blog{
-	background: url('../images/spriteme1.png') no-repeat;
+	background: url('../../images/spriteme1.png') no-repeat;
 	width: 78px;
 	height: 26px;
 	background-position: -10px -208px;
 }
 
 #navbar-link-portfolio{
-	background: url('../images/spriteme1.png') no-repeat;
+	background: url('../../images/spriteme1.png') no-repeat;
 	width: 157px;
 	height: 26px;
 	background-position: -10px -254px;
@@ -61,7 +54,7 @@ body {
 }
 
 #navbar-link-resources{
-	background: url('../images/spriteme1.png') no-repeat;
+	background: url('../../images/spriteme1.png') no-repeat;
 	width: 172px;
 	height: 27px;
 	background-position: -10px -300px;
@@ -133,7 +126,7 @@ body {
 
 #background-ring{
 	position: absolute;
-	top: 1500px;
+	top: 1000px;
 	right: -50px;
 	overflow: hidden;
 	z-index: -1;
@@ -141,8 +134,17 @@ body {
 
 #background-phial{
 	position: absolute;
-	top: 2100px;
+	top: 1600px;
 	left: -100px;
+	overflow: hidden;
+	z-index: -1;
+}
+
+#background-feather{
+
+	position: absolute;
+	top: 2200px;
+	right: 0px;
 	overflow: hidden;
 	z-index: -1;
 }

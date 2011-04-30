@@ -23,7 +23,7 @@ function formatTitle(title, currentArray, currentIndex, currentOpts) {
 function displayImages(){
 	$("#fantasy-banner").delay(100).fadeIn();
 	$("#scifi-banner").delay(200).fadeIn();
-	fantasy_data = loadPortfolio("portfolio/fantasy.xml");
+	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
 	fantasy_div = document.getElementById("fantasy-images")
 	for (n = 0; n < fantasy_data.length; n++){
 		a = document.createElement('a');
