@@ -1,21 +1,7 @@
-$(document).ready(init);
+
 window.onload = displayImages;
-var webP = false;
-function init() {
-	onloadHandler();
-	$("a.portfolio-image").fancybox({
-		'transitionIn'	     :	'fade',
-		'transitionOut'	     :	'fade',
-		'opacity'            :  'true',
-		'overlayOpacity'     :  '.75',
-		'overlayColor'       :  '#000',
-		'hideOnContentClick' :  'true',
-		'titlePosition'      :  'inside',
-		'speedIn'            :  600,
-		'titleFormat'        : formatTitle
-		
-	});
-}
+
+
 function formatTitle(title, currentArray, currentIndex, currentOpts) {
     return '<div class="images-title">' + (title && title.length ? '<b>' + title + '</b>' : '' ) + '</div>';
 }
@@ -36,9 +22,21 @@ function displayImages(){
 		c.setAttribute("class", "portfolio-image");
 
 		a.appendChild(c);
-		fantasy_data[n].thumbnail.drawOnCanvas(c, webP);
+		fantasy_data[n].thumbnail.drawOnCanvas(c);
 		fantasy_div.appendChild(a);
 	}
+	$("a.portfolio-image").fancybox({
+		'transitionIn'	     :	'fade',
+		'transitionOut'	     :	'fade',
+		'opacity'            :  'true',
+		'overlayOpacity'     :  '.75',
+		'overlayColor'       :  '#000',
+		'hideOnContentClick' :  'true',
+		'titlePosition'      :  'inside',
+		'speedIn'            :  600,
+		'titleFormat'        : formatTitle
+		
+	});
 }
 
 function showFantasy(){

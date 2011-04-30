@@ -40,7 +40,7 @@ function loadPortfolio(manifest_file){
 	return portfolio_data;
 }
 
-function drawOnCanvas(canvas, webp) {
+function drawOnCanvas(canvas) {
 	context = canvas.getContext('2d');
 	canvas.width = 680;
 	canvas.height = 180;

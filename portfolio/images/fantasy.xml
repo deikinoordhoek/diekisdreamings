@@ -5,10 +5,10 @@
 			<url>thumbnails/ring-of-evil.png</url>
 			<plain_url>fullsize/ring-of-evil.jpg</plain_url>
 			<subset>
-				<tlX>333</tlX>
-				<tlY>208</tlY>
-				<brX>971</brX>
-				<brY>316</brY>
+				<tlX>220</tlX>
+				<tlY>124</tlY>
+				<brX>968</brX>
+				<brY>252</brY>
 			</subset>
 		</thumbnail>
 		<fullsize>
@@ -22,10 +22,10 @@
 			<url>thumbnails/magical-forest.png</url>
 			<plain_url>fullsize/magical-forest.jpg</plain_url>
 			<subset>
-				<tlX>181</tlX>
-				<tlY>297</tlY>
-				<brX>1152</brX>
-				<brY>461</brY>
+				<tlX>1</tlX>
+				<tlY>213</tlY>
+				<brX>991</brX>
+				<brY>381</brY>
 			</subset>		</thumbnail>
 		<fullsize>
 			<url>fullsize/magical-forest.jpg</url>
@@ -50,10 +50,10 @@
 			<url>thumbnails/evanescense.png</url>
 			<plain_url>fullsize/evanescense.jpg</plain_url>
 			<subset>
-				<tlX>65</tlX>
-				<tlY>150</tlY>
-				<brX>1258</brX>
-				<brY>353</brY>
+				<tlX>190</tlX>
+				<tlY>130</tlY>
+				<brX>912</brX>
+				<brY>253</brY>
 			</subset>
 		</thumbnail>
 		<fullsize>
@@ -80,10 +80,10 @@
 			<url>thumbnails/dueling-fates.png</url>
 			<plain_url>fullsize/dueling-fates.jpg</plain_url>
 			<subset>
-				<tlX>132</tlX>
-				<tlY>37</tlY>
-				<brX>1007</brX>
-				<brY>185</brY>
+				<tlX>26</tlX>
+				<tlY>27</tlY>
+				<brX>911</brX>
+				<brY>175</brY>
 			</subset>	
 		</thumbnail>
 		<fullsize>
@@ -113,10 +113,10 @@
 			<url>thumbnails/darkness-surrounding.png</url>
 			<plain_url>fullsize/darkness-surrounding.jpg</plain_url>
 			<subset>
-				<tlX>90</tlX>
-				<tlY>163</tlY>
-				<brX>1037</brX>
-				<brY>322</brY>
+				<tlX>24</tlX>
+				<tlY>123</tlY>
+				<brX>808</brX>
+				<brY>254</brY>
 			</subset>		
 		</thumbnail>
 		<fullsize>
@@ -142,9 +142,9 @@
 			<plain_url>fullsize/death.jpg</plain_url>
 			<subset>
 				<tlX>1</tlX>
-				<tlY>271</tlY>
-				<brX>1156</brX>
-				<brY>470</brY>
+				<tlY>221</tlY>
+				<brX>999</brX>
+				<brY>390</brY>
 			</subset>		</thumbnail>
 		<fullsize>
 			<url>fullsize/death.jpg</url>

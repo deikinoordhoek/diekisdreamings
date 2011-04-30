@@ -118,7 +118,7 @@ body {
 }
 #background-sword{
 	position: absolute;
-	top: 300px;
+	top: 500px;
 	left: -200px;
 	z-index: -1;
 	overflow: hidden;
@@ -126,7 +126,7 @@ body {
 
 #background-ring{
 	position: absolute;
-	top: 1000px;
+	top: 1100px;
 	right: -50px;
 	overflow: hidden;
 	z-index: -1;
