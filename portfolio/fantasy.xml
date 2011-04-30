@@ -11,7 +11,9 @@
 				<brY>316</brY>
 			</subset>
 		</thumbnail>
-		<fullsize>fullsize/ring-of-evil.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/ring-of-evil.jpg</url>
+		</fullsize>
 		<image_title>Ring of Evil</image_title>
 		<credits></credits>
 	</image>
@@ -25,7 +27,9 @@
 				<brX>1152</brX>
 				<brY>461</brY>
 			</subset>		</thumbnail>
-		<fullsize>fullsize/magical-forest.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/magical-forest.jpg</url>
+		</fullsize>
 		<image_title>Magical Forest</image_title>
 		<credits></credits>
 	</image>	
@@ -34,7 +38,9 @@
 			<url>thumbnails/deathly-visage.png</url>
 			<plain_url>plain_thumbnails/deathly-visage.jpg</plain_url>
 		</thumbnail>
-		<fullsize>fullsize/deathly-visage.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/deathly-visage.jpg</url>
+		</fullsize>
 		<image_title>Deathly Visage</image_title>
 		<credits></credits>
 	</image>
@@ -48,8 +54,11 @@
 				<tlY>150</tlY>
 				<brX>1258</brX>
 				<brY>353</brY>
-			</subset>		</thumbnail>
-		<fullsize>fullsize/evanescense.jpg</fullsize>
+			</subset>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/evanescense.jpg</url>
+		</fullsize>
 		<image_title>Evanescense</image_title>
 		<credits></credits>
 	</image>	
@@ -60,7 +69,9 @@
 			<plain_url>plain_thumbnails/sword-of-ice.jpg</plain_url>
 		</thumbnail>
 
-		<fullsize>fullsize/sword-of-ice.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/sword-of-ice.jpg</url>
+		</fullsize>
 		<image_title>Sword of Ice</image_title>
 		<credits></credits>
 	</image>
@@ -75,7 +86,9 @@
 				<brY>185</brY>
 			</subset>	
 		</thumbnail>
-		<fullsize>fullsize/dueling-fates.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/dueling-fates.jpg</url>
+		</fullsize>
 		<image_title>Duel of the Fates</image_title>
 		<credits></credits>
 	</image>
@@ -89,7 +102,9 @@
 				<brX>882</brX>
 				<brY>534</brY>
 			</subset>		</thumbnail>
-		<fullsize>fullsize/lantern-waste.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/lantern-waste.jpg</url>
+		</fullsize>
 		<image_title>Lantern Waste</image_title>
 		<credits></credits>
 	</image>
@@ -104,7 +119,9 @@
 				<brY>322</brY>
 			</subset>		
 		</thumbnail>
-		<fullsize>fullsize/darkness-surrounding.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/darkness-surrounding.jpg</url>
+		</fullsize>
 		<image_title>Darkness Surrounding</image_title>
 		<credits></credits>
 	</image>
@@ -113,7 +130,9 @@
 			<url>thumbnails/frozen-gateway.png</url>
 			<plain_url>plain_thumbnails/Frozen-Gateway.jpg</plain_url>
 		</thumbnail>
-		<fullsize>fullsize/frozen-gateway.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/frozen-gateway.jpg</url>
+		</fullsize>
 		<image_title>Frozen Gateway</image_title>
 		<credits></credits>
 	</image>
@@ -127,7 +146,9 @@
 				<brX>1156</brX>
 				<brY>470</brY>
 			</subset>		</thumbnail>
-		<fullsize>fullsize/death.jpg</fullsize>
+		<fullsize>
+			<url>fullsize/death.jpg</url>
+		</fullsize>
 		<image_title>Death</image_title>
 		<credits></credits>
 	</image>	

@@ -44,7 +44,7 @@ function getImageData(input_xml){
 
 		ie_thumbnail_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("url")[0].childNodes[0].nodeValue;
 		thumbnail_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("plain_url")[0].childNodes[0].nodeValue;
-		fullsize_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("fullsize")[0].childNodes[0].nodeValue;
+		fullsize_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("fullsize")[0].getElementsByTagName("url")[0].childNodes[0].nodeValue;
 		image_title = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("image_title")[0].childNodes[0].nodeValue;
 		subset  = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("subset")[0];
 		if (!!subset){
@@ -71,12 +71,17 @@ function loadPortfolio(manifest_file){
 	return portfolio_data;
 }
 
-function drawOnCanvas(canvas) {
+function drawOnCanvas(canvas, webp) {
 	context = canvas.getContext('2d');
 	canvas.width = 680;
 	canvas.height = 180;
 	i = this.image;
-	i.src= "portfolio/" + this.plain_url;
+	if (webp) {
+		i.src= "portfolio/" + this.webp_url;
+	}
+	else {
+		i.src = "portfolio/" + this.plain_url;
+	}
 	i.onload = constructPortfolioDisplay(this, context);
 	
 
