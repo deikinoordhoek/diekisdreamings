@@ -21,7 +21,7 @@
 		  _gaq.push(['_setAccount', 'UA-15633439-3']);
 		  _gaq.push(['_setDomainName', '.diekisdreamings.com']);
 		  _gaq.push(['_trackPageview']);
-	
+	 
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -44,15 +44,22 @@
 		<div id = "content">
 			<center>
 				<div id="main-images">
-					<a href="#" onclick="showFantasy();"> <img id="fantasy-banner" src="images/fantasy-banner.png"> </a>
-					<a href="portfolio/scifi.html"> <img id="scifi-banner"  src="images/sci-fi-banner.png"></a>
+					<a href="#" onclick="showFantasy();"> <img id="fantasy-banner" data-fallback="images/fantasy-banner.png" data-image="images/fantasy-banner-image.jpg" data-mask="images/sci-fi-banner-mask.png"> </a>
+					<a href="portfolio/scifi.html"> <img id="scifi-banner"  data-fallback="images/sci-fi-banner.png" data-image="images/sci-fi-banner-image.jpg" data-mask="images/sci-fi-banner-mask.png"></a>
 				</div>
 				<div id="fantasy-images">
 					<img id="dragon-left" src="images/dragon-icon.png"> <img id="fantasy-title" src="images/Fantasy-Title.png"><img id="dragon-right" src="images/dragon-icon.png">
+					<img id="background-sword" data-fallback="images/Sword-background.png" data-image="images/Sword-background-image.jpg" data-mask="images/Sword-background-mask.png">
+					<img id="background-ring" src="images/ring.png">
+					<img id="background-phial" data-fallback="images/phial.png" data-image="images/Phial-image.jpg" data-mask="images/Phial-mask.png">
 				</div>
 				<div id="sci-fi-images">
 				</div>
 			</center>
 		</div>
+		<div id="hidden-text"> If you can see this, CSS is disabled. Ignore it, it's just to force a font to load. </div>
+		<script>
+			stageTwoLoad();
+		</script>
 	</body>
 </html>

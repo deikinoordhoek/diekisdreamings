@@ -33,14 +33,18 @@ function displayImages(){
 	$("#scifi-banner").delay(200).fadeIn();
 	fantasy_data = loadPortfolio("portfolio/fantasy.xml");
 	fantasy_div = document.getElementById("fantasy-images")
-	for (i = 0; i < fantasy_data.length; i++){
+	for (n = 0; n < fantasy_data.length; n++){
 		a = document.createElement('a');
-		a.href = fantasy_data[i].fullsize.image.src;
+		a.href = fantasy_data[n].fullsize.image.src;
 		a.setAttribute("class", "portfolio-image");
-		a.setAttribute("title", fantasy_data[i].image_title);
-		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[i].fullsize.image.src + ']);');
-		fantasy_data[i].thumbnail.image.setAttribute("class", "portfolio-image");
-		a.appendChild(fantasy_data[i].thumbnail.image);
+		a.setAttribute("title", fantasy_data[n].image_title);
+		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[n].fullsize.image.src + ']);');
+
+		c = document.createElement('canvas');
+		c.setAttribute("class", "portfolio-image");
+
+		a.appendChild(c);
+		fantasy_data[n].thumbnail.drawOnCanvas(c);
 		fantasy_div.appendChild(a);
 	}
 }
