@@ -69,7 +69,7 @@ function constructPortfolioDisplay(parent, context){
 			context.shadowColor = "black";
 			context.shadowOffsetX = 0;
 			context.shadowOffsetY = 0;
-			context.shadowBlur = 10;
+			context.shadowBlur = 14;
 			context.fill();
 		context.restore();
 
