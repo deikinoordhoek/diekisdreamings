@@ -5,7 +5,7 @@ window.onload = displayImages;
 function formatTitle(title, currentArray, currentIndex, currentOpts) {
     return '<div class="images-title">' + (title && title.length ? '<b>' + title + '</b>' : '' ) + '</div>';
 }
-
+var fantasy_data;
 function displayImages(){
 	$("#fantasy-banner").delay(100).fadeIn();
 	$("#scifi-banner").delay(200).fadeIn();
@@ -20,7 +20,7 @@ function displayImages(){
 
 		c = document.createElement('canvas');
 		c.setAttribute("class", "portfolio-image");
-
+		c.setAttribute("data-num", n);
 		a.appendChild(c);
 		fantasy_data[n].thumbnail.drawOnCanvas(c);
 		fantasy_div.appendChild(a);

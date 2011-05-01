@@ -118,7 +118,7 @@ body {
 }
 #background-sword{
 	position: absolute;
-	top: 500px;
+	top: 300px;
 	left: -100px;
 	z-index: -1;
 	overflow: hidden;

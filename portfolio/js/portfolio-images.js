@@ -40,17 +40,17 @@ function loadPortfolio(manifest_file){
 	return portfolio_data;
 }
 
-function drawOnCanvas(canvas) {
+function drawOnCanvas(canvas, highlight) {
 	context = canvas.getContext('2d');
 	canvas.width = 680;
 	canvas.height = 180;
 	i = this.image;
 	i.src = "portfolio/images/" + this.plain_url;
-	i.onload = constructPortfolioDisplay(this, context);
+	i.onload = constructPortfolioDisplay(this, context, highlight);
 	
 
 }
-function constructPortfolioDisplay(parent, context){
+function constructPortfolioDisplay(parent, context, highlight){
 	return function(){
 		var ITEM_OFFSET = 9;
 		var ITEM_WIDTH = 662;
