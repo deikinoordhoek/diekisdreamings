@@ -18,7 +18,8 @@ function stageTwoLoad(webp){
 		images = getImageElements(webp);
 		canvases = addCanvasElements(images);
 		for (i = 0; i < images.length; i++){
-			drawCanvasElement(canvases[i], images[i]);
+			canvases_loaded[i] = false;
+			drawCanvasElement(canvases[i], images[i], i);
 		}
 	}
 	else{
@@ -71,14 +72,14 @@ function addCanvasElements(images){
 	return canvas_elements;
 }
 
-function drawCanvasElement(canvas, image){
+function drawCanvasElement(canvas, image, i){
 	mask = new Image()
-	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas);
+	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas, i);
 	mask.src = image.getAttribute('data-mask');
 	
 }
 
-function drawImage(mask, image_src, canvas){
+function drawImage(mask, image_src, canvas, i){
 	return function(){
 		//Draw the mask to the canvas, then retrieve the pixel data. 
 		//Pass that to drawImageAlpha, which loads the image and actually draws everything.
@@ -103,14 +104,14 @@ function drawImage(mask, image_src, canvas){
 		canvas.width = canvas.width;
 
 		image = new Image();
-		image.onload = drawImageAlpha(canvas, image, pix_mask);
+		image.onload = drawImageAlpha(canvas, image, pix_mask, i);
 		image.src = image_src;	
 
 	};
 	
 }
 
-function drawImageAlpha(canvas, image, pix_mask){
+function drawImageAlpha(canvas, image, pix_mask, i){
 	return function(){
 		context = canvas.getContext('2d')
 		if (!!canvas.getAttribute('data-offset-x')) offset_x = canvas.getAttribute('data-offset-x');
@@ -129,5 +130,6 @@ function drawImageAlpha(canvas, image, pix_mask){
 		}
 
 		context.putImageData(imgd, 0, 0);
+		canvases_loaded[i] = true;
 	}
 }
