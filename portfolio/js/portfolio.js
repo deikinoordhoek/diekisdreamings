@@ -25,6 +25,7 @@ $(function(){
 var fantasy_data;
 
 function init(){
+	onloadHandler();
 	displayImages();
 	startProgressBar();
 }
