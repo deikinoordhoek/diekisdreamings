@@ -51,13 +51,25 @@ function checkProgress(){
 }
 function hideProgressBar(){
 	$("#progress-counter").fadeOut();
+	//$("#fantasy-banner").delay(100).fadeIn();
+	//$("#scifi-banner").delay(200).fadeIn();
+
 }
 function updateProgressBar(percent){
+	canvas = document.getElementById("progress-canvas");
+	context = canvas.getContext("2d");
+	canvas.width = 400;
+	canvas.height = 200;
+	context.fillStyle = "#777";
+	context.fillRect(0,0,400,10);
+	context.fillStyle = "#fff";
+	context.shadowColor = "white";
+	context.shadowBlur= 4;
+	context.fillRect(0,0,percent * 4,10);
+	
 	document.getElementById("progress-counter").innerHTML = percent;
 }
 function displayImages(){
-	//$("#fantasy-banner").delay(100).fadeIn();
-	//$("#scifi-banner").delay(200).fadeIn();
 	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
 	fantasy_div = document.getElementById("fantasy-images")
 	prerenderInnerGlow();
