@@ -42,7 +42,10 @@ function checkProgress(){
 	for (a = 0; a < scifi_data.length; a++){
 		if (scifi_data[a].fullsize.is_loaded == true) numloaded++;
 	}
-	progress = (numloaded / (scifi_data.length + fantasy_data.length)) * 100;
+	for (a = 0; a < canvases_loaded.length; a++){
+		if (canvases_loaded[a] == true) numloaded++;
+	}
+	progress = (numloaded / (scifi_data.length + fantasy_data.length + canvases_loaded.length)) * 100;
 	updateProgressBar(progress);
 	if (progress == 100){
 		 hideProgressBar()

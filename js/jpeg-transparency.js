@@ -12,13 +12,14 @@ function onloadHandler(){
 	webp_opera_test.onload = function(){stageTwoLoad(true)}
 
 }
-
+var canvases_loaded = new Array;
 function stageTwoLoad(webp){
 	if (!!document.createElement('canvas').getContext){
 		images = getImageElements(webp);
 		canvases = addCanvasElements(images);
-		for (i = 0; i < images.length; i++){		
-			drawCanvasElement(canvases[i], images[i]);
+		for (i = 0; i < images.length; i++){
+			canvases_loaded[i] = false;
+			drawCanvasElement(canvases[i], images[i], i);
 		}
 	}
 	else{
@@ -71,19 +72,19 @@ function addCanvasElements(images){
 	return canvas_elements;
 }
 
-function drawCanvasElement(canvas, image){
+function drawCanvasElement(canvas, image, i){
 	mask = new Image()
-	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas);
+	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas, i);
 	mask.src = image.getAttribute('data-mask');
 	
 }
 
-function drawImage(mask, image_src, canvas){
+function drawImage(mask, image_src, canvas, i){
 	return function(){
 		//Draw the mask to the canvas, then retrieve the pixel data. 
 		//Pass that to drawImageAlpha, which loads the image and actually draws everything.
 		//This is necessary because events are confusing.
-		
+		canvases_loaded[i] = true;
 		context = canvas.getContext('2d');
 		
 		if (!!canvas.getAttribute('data-width')) canvas.width = canvas.getAttribute('data-width');
@@ -105,6 +106,7 @@ function drawImage(mask, image_src, canvas){
 		image = new Image();
 		image.onload = drawImageAlpha(canvas, image, pix_mask);
 		image.src = image_src;	
+
 	};
 	
 }
