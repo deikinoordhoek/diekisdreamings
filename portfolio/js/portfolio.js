@@ -61,11 +61,11 @@ function updateProgressBar(percent){
 	canvas.width = 400;
 	canvas.height = 200;
 	context.fillStyle = "#777";
-	context.fillRect(0,0,400,10);
+	context.fillRect(0,0,400,3);
 	context.fillStyle = "#fff";
 	context.shadowColor = "white";
 	context.shadowBlur= 4;
-	context.fillRect(0,0,percent * 4,10);
+	context.fillRect(0,0,percent * 4, 3);
 
 }
 function displayImages(){
