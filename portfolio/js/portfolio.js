@@ -27,7 +27,9 @@ var fantasy_data;
 function init(){
 	onloadHandler();
 	displayImages();
-	startProgressBar();
+	startProgressBar();	
+
+
 }
 
 function startProgressBar(){
@@ -55,6 +57,7 @@ function checkProgress(){
 }
 function hideProgressBar(){
 	$("#progress-counter").fadeOut();
+	$("#progress-counter").delay(500).remove();
 	//$("#fantasy-banner").delay(100).fadeIn();
 	//$("#scifi-banner").delay(200).fadeIn();
 
