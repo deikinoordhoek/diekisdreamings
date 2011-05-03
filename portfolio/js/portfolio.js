@@ -66,8 +66,7 @@ function updateProgressBar(percent){
 	context.shadowColor = "white";
 	context.shadowBlur= 4;
 	context.fillRect(0,0,percent * 4,10);
-	
-	document.getElementById("progress-counter").innerHTML = percent;
+
 }
 function displayImages(){
 	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
