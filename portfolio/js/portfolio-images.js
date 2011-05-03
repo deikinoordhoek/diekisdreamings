@@ -41,10 +41,26 @@ function loadPortfolio(manifest_file){
 	manifest = getPortfolioManifest(manifest_file);
 	portfolio_data = getImageData(manifest);
 	for (i = 0; i < portfolio_data.length; i++){
-		//portfolio_data[i].thumbnail.ie_image.src = "portfolio/" + portfolio_data[i].thumbnail.ie_url;
 		portfolio_data[i].fullsize.image.src = "portfolio/images/" + portfolio_data[i].fullsize.url;
+		portfolio_data[i].fullsize.image.onload = markImageLoaded(portfolio_data[i]);
 	}
 	return portfolio_data;
+}
+function markImageLoaded(data){
+	return function(){
+		data.fullsize.is_loaded = true;
+		if (data.thumbnail.is_loaded == true){
+			data.is_loaded = true;
+		}
+	}
+}
+function markThumbnailLoaded(data){ 
+	return function(){
+		data.thumbnail.is_loaded = true;
+		if (data.image.is_loaded == true){
+			data.is_loaded = true;
+		}
+	}
 }
 function prerenderInnerGlow(){
 	var ITEM_OFFSET = 9;
@@ -72,6 +88,7 @@ function drawOnCanvas(canvas, highlight) {
 		i.onload = constructPortfolioDisplay(this, context, highlight, i);
 	}
 	else{
+		markThumbnailLoaded(this.parent);
 		i_c = constructPortfolioDisplay(this, context, highlight, i)
 		i_c();
 	}
@@ -80,6 +97,7 @@ function drawOnCanvas(canvas, highlight) {
 }
 function constructPortfolioDisplay(parent, context, highlight, image){
 	return function(){
+		markThumbnailLoaded(parent.parent);
 		var ITEM_OFFSET = 9;
 		var ITEM_WIDTH = 662;
 		var ITEM_HIEGHT = 162;

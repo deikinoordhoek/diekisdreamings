@@ -1,20 +1,25 @@
 function portfolioPiece(fullsize_url, ie_thumbnail_url, thumbnail_url, image_title, topX, topY, width, height){
-	this.fullsize = new portfolioImage(fullsize_url);
+	this.fullsize = new portfolioImage(this, fullsize_url);
 	if (!topX) {
-		this.thumbnail = new portfolioThumbnail(ie_thumbnail_url, thumbnail_url, image_title);
+		this.thumbnail = new portfolioThumbnail(this, ie_thumbnail_url, thumbnail_url, image_title);
 	}
 	else {
-		this.thumbnail = new portfolioThumbnail(ie_thumbnail_url, thumbnail_url, image_title, topX, topY, width, height)
+		this.thumbnail = new portfolioThumbnail(this, ie_thumbnail_url, thumbnail_url, image_title, topX, topY, width, height)
 	}
 	this.image_title = image_title;
+	this.is_loaded = false;
 }
 
-function portfolioImage (url){
+function portfolioImage (parent, url){
+	this.parent = parent;
 	this.url = url;
-	this.image = new Image();	
+	this.image = new Image();
+
 }
 
-function portfolioThumbnail (url, plain_url, title, topX, topY, width, height){
+function portfolioThumbnail (parent, url, plain_url, title, topX, topY, width, height){
+	this.parent = parent;
+
 	this.ie_url = url;
 	this.ie_image = new Image();
 	this.plain_url = plain_url;

@@ -1,14 +1,15 @@
-
-window.onload = displayImages;
 var MAIN_PAGE = 0;
 var FANTASY_PAGE = 1;
 var SCIFI_PAGE = 2;
 var current_page = MAIN_PAGE;
 
+$(document).ready(init);
+
 
 function formatTitle(title, currentArray, currentIndex, currentOpts) {
     return '<div class="images-title">' + (title && title.length ? '<b>' + title + '</b>' : '' ) + '</div>';
 }
+
 $(function(){
 	$('#fantasy-link').click(function(){
 		showFantasy();
@@ -22,6 +23,32 @@ $(function(){
 
 });
 var fantasy_data;
+
+function init(){
+	displayImages();
+	startProgressBar();
+}
+
+function startProgressBar(){
+	setTimeout(checkProgress, 100);
+}
+
+function checkProgress(){
+	numloaded = 0;
+	for (a = 0; a < fantasy_data.length; a++){
+		if (fantasy_data[a].fullsize.is_loaded == true) numloaded++;
+	}
+	for (a = 0; a < scifi_data.length; a++){
+		if (scifi_data[a].fullsize.is_loaded == true) numloaded++;
+	}
+	progress = (numloaded / (scifi_data.length + fantasy_data.length)) * 100;
+	updateProgressBar(progress);	
+	setTimeout(checkProgress, 100);
+}
+
+function updateProgressBar(percent){
+	document.getElementById("progress-counter").innerHTML = percent;
+}
 function displayImages(){
 	//$("#fantasy-banner").delay(100).fadeIn();
 	//$("#scifi-banner").delay(200).fadeIn();
