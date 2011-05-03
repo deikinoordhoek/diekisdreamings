@@ -125,8 +125,8 @@ function drawImageAlpha(canvas, image, pix_mask, i){
 		pix_length = pix.length;
 
 		//Step through all the image data and apply the mask
-		for (var i=0; i < pix_length; i +=4){
-			pix[i + 3] = pix_mask[i];
+		for (var i2=0; i2 < pix_length; i2 +=4){
+			pix[i2 + 3] = pix_mask[i2];
 		}
 
 		context.putImageData(imgd, 0, 0);
