@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<manifest>
+	<image>
+		<thumbnail>
+			<url>thumbnails/orbit.png</url>
+			<plain_url>plain_thumbnails/orbit.jpg</plain_url>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/Orbit.jpg</url>
+		</fullsize>
+		<image_title>Orbit</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>
+			<url>thumbnails/royal-sunrise.png</url>
+			<plain_url>plain_thumbnails/royal-sunrise.jpg</plain_url>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/royal-sunrise.jpg</url>
+		</fullsize>
+		<image_title>Royal Sunrise</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>
+			<url>thumbnails/lightspeed.png</url>
+			<plain_url>fullsize/lightspeed.jpg</plain_url>
+			<subset>
+				<tlX>146</tlX>
+				<tlY>202</tlY>
+				<brX>904</brX>
+				<brY>331</brY>
+			</subset>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/lightspeed.jpg</url>
+		</fullsize>
+		<image_title>Lightspeed</image_title>
+		<credits></credits>
+	</image>
+
+	<image>
+		<thumbnail>
+			<url>thumbnails/infinity-unbound.png</url>
+			<plain_url>plain_thumbnails/infinity-unbound.jpg</plain_url>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/infinity-unbound.jpg</url>
+		</fullsize>
+		<image_title>Infinity Unbound</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>
+			<url>thumbnails/sheilds-up.png</url>
+			<plain_url>fullsize/shields-up.jpg</plain_url>
+			<subset>
+				<tlX>136</tlX>
+				<tlY>102</tlY>
+				<brX>849</brX>
+				<brY>221</brY>
+			</subset>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/shields-up.jpg</url>
+		</fullsize>
+		<image_title>Shields Up!</image_title>
+		<credits></credits>
+	</image>
+	<image>
+		<thumbnail>
+			<url>thumbnails/beautiful-serenity.png</url>
+			<plain_url>fullsize/beautiful-serenity.jpg</plain_url>
+			<subset>
+				<tlX>175</tlX>
+				<tlY>80</tlY>
+				<brX>1000</brX>
+				<brY>221</brY>
+			</subset>
+		</thumbnail>
+		<fullsize>
+			<url>fullsize/beautiful-serenity.jpg</url>
+		</fullsize>
+		<image_title>Beautiful Serenity</image_title>
+		<credits></credits>
+	</image>
+
+</manifest>
