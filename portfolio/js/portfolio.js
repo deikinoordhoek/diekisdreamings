@@ -42,10 +42,12 @@ function checkProgress(){
 		if (scifi_data[a].fullsize.is_loaded == true) numloaded++;
 	}
 	progress = (numloaded / (scifi_data.length + fantasy_data.length)) * 100;
-	updateProgressBar(progress);	
-	setTimeout(checkProgress, 100);
+	updateProgressBar(progress);
+	if (progress == 100) hideProgressBar() else setTimeout(checkProgress, 100);
 }
-
+function hideProgressBar(){
+	$("#progress-counter").fadeOut();
+}
 function updateProgressBar(percent){
 	document.getElementById("progress-counter").innerHTML = percent;
 }
