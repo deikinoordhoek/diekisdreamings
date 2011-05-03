@@ -43,7 +43,11 @@ function checkProgress(){
 	}
 	progress = (numloaded / (scifi_data.length + fantasy_data.length)) * 100;
 	updateProgressBar(progress);
-	if (progress == 100) hideProgressBar() else setTimeout(checkProgress, 100);
+	if (progress == 100){
+		 hideProgressBar()
+	} else { 
+		setTimeout(checkProgress, 100);
+	}
 }
 function hideProgressBar(){
 	$("#progress-counter").fadeOut();
