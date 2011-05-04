@@ -53,14 +53,14 @@ function checkProgress(){
 	progress = (numloaded / (scifi_data.length + fantasy_data.length + canvases_loaded.length)) * 100;
 	progress_bar.updateProgress(progress);
 	if (progress == 100){
-		 setTimeoue(hideProgressBar, 500);
+		 setTimeout(hideProgressBar, 500);
 	} else { 
 		setTimeout(checkProgress, 100);
 	}
 }
 function hideProgressBar(){
-	$("#progress-counter").delay(500).fadeOut();
-	$("#progress-counter").delay(800).remove();
+	$("#progress-counter").delay(100).fadeOut();
+	$("#progress-counter").delay(400).remove();
 	finishLoading();
 	
 }
