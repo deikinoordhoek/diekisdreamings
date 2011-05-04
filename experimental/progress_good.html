@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Progress bar experiment</title>
+		<script src="progress_bar_good.js" type="text/javascript"></script>
+		<style>
+			body{
+				background-color: #383838;
+			}
+			canvas{
+			 margin: 100px auto 0  ;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="content">
+			<center><canvas id="progress-bar"></canvas></center>
+		</div>
+		<script>
+			p = new progressBar(document.getElementById('progress-bar'));
+			process_percent = 0;
+			setTimeout(process, 100);
+
+			function process() {
+				process_percent++;
+				p.updateProgress(process_percent);
+				setTimeout(process, 100);
+			}
+		</script>
+	</body>
+</html>
