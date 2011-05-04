@@ -2,7 +2,7 @@ var MAIN_PAGE = 0;
 var FANTASY_PAGE = 1;
 var SCIFI_PAGE = 2;
 var current_page = MAIN_PAGE;
-
+var progress_bar;
 $(document).ready(init);
 
 
@@ -35,6 +35,7 @@ function init(){
 }
 
 function startProgressBar(){
+	progress_bar = new progressBar(document.getElementById("progress-bar"));
 	setTimeout(checkProgress, 100);
 }
 
@@ -50,7 +51,7 @@ function checkProgress(){
 		if (canvases_loaded[a] == true) numloaded++;
 	}
 	progress = (numloaded / (scifi_data.length + fantasy_data.length + canvases_loaded.length)) * 100;
-	updateProgressBar(progress);
+	progress_bar.updateProgress(progress);
 	if (progress == 100){
 		 hideProgressBar()
 	} else { 
@@ -62,19 +63,6 @@ function hideProgressBar(){
 	$("#progress-counter").delay(500).remove();
 	finishLoading();
 	
-}
-function updateProgressBar(percent){
-	canvas = document.getElementById("progress-canvas");
-	context = canvas.getContext("2d");
-	canvas.width = 400;
-	canvas.height = 200;
-	context.fillStyle = "#777";
-	context.fillRect(0,0,400,3);
-	context.fillStyle = "#fff";
-	context.shadowColor = "white";
-	context.shadowBlur= 4;
-	context.fillRect(0,0,percent * 4, 3);
-
 }
 function displayImages(){
 	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
