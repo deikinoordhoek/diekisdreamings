@@ -53,7 +53,7 @@ function checkProgress(){
 	progress = (numloaded / (scifi_data.length + fantasy_data.length + canvases_loaded.length)) * 100;
 	progress_bar.updateProgress(progress);
 	if (progress == 100){
-		 hideProgressBar()
+		 setTimeoue(hideProgressBar, 500);
 	} else { 
 		setTimeout(checkProgress, 100);
 	}
