@@ -59,9 +59,9 @@ function checkProgress(){
 	}
 }
 function hideProgressBar(){
-	$("#progress-counter").fadeOut();
+	$("#progress-counter").fadeOut(500);
 	$("#progress-counter").delay(500).remove();
-	finishLoading();
+	$().delay(500).finishLoading();
 	
 }
 function displayImages(){

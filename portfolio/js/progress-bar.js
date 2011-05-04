@@ -27,7 +27,7 @@ function progressBarRedraw(canvas, percent, parent){
 	context = canvas.getContext("2d");
 
 	//Draw full, grey, circle
-	context.strokeStyle = "#444";
+	context.strokeStyle = "#555";
 	context.lineWidth = 4;
 	context.beginPath();
 		context.arc(200, 200, 100, 0, (Math.PI * 2), false);
