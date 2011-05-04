@@ -10,7 +10,7 @@ function formatTitle(title, currentArray, currentIndex, currentOpts) {
     return '<div class="images-title">' + (title && title.length ? '<b>' + title + '</b>' : '' ) + '</div>';
 }
 
-$(function(){
+function finishLoading(){
 	$('#fantasy-link').click(function(){
 		showFantasy();
 	});
@@ -21,7 +21,7 @@ $(function(){
 	$.History.bind('/scifi', showScifi);
 	$.History.bind('/main', showMain);
 
-});
+};
 var fantasy_data;
 
 function init(){
@@ -58,6 +58,7 @@ function checkProgress(){
 function hideProgressBar(){
 	$("#progress-counter").fadeOut();
 	$("#progress-counter").delay(500).remove();
+	finishLoading();
 	//$("#fantasy-banner").delay(100).fadeIn();
 	//$("#scifi-banner").delay(200).fadeIn();
 
