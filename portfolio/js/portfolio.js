@@ -20,8 +20,8 @@ function finishLoading(){
 	$.History.bind('/fantasy', showFantasy);
 	$.History.bind('/scifi', showScifi);
 	$.History.bind('/main', showMain);
-	$("#fantasy-banner").delay(600).fadeIn();
-	$("#scifi-banner").delay(700).fadeIn();
+	$("#fantasy-banner").delay(900).fadeIn();
+	$("#scifi-banner").delay(1000).fadeIn();
 
 };
 var fantasy_data;
@@ -59,8 +59,8 @@ function checkProgress(){
 	}
 }
 function hideProgressBar(){
-	$("#progress-counter").fadeOut(500);
-	$("#progress-counter").delay(500).remove();
+	$("#progress-counter").delay(300).fadeOut(500);
+	$("#progress-counter").delay(800).remove();
 	finishLoading();
 	
 }
