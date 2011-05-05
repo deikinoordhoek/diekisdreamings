@@ -60,6 +60,7 @@ function checkProgress(){
 }
 function hideProgressBar(){
 	$("#progress-counter").delay(100).fadeOut(500);
+	$("#loading-text").delay(100).fadeOut(500);
 	finishLoading();
 	
 }
