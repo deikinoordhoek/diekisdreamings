@@ -102,7 +102,7 @@ function progressBarRedraw(canvas, percent, parent){
 		parent.newParticle((percent / 100) * (Math.PI * 2));
 	}
 	parent.updateParticles();
-	parent.center_spin_frame++;
+	parent.center_spin_frame--;
 	if (parent.center_spin_frame == 30) parent.center_spin_frame = 0;
 	setTimeout(parent.redraw(parent.canvas, parent.percent, parent), 20);
 	}	
