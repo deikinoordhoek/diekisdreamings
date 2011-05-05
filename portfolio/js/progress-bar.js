@@ -51,14 +51,14 @@ function progressBarRedraw(canvas, percent, parent){
 		context.shadowBlur = 0;
 
 		context.beginPath();
-		context.arc(200,200,20,0,(Math.PI * 2), false);
+		context.arc(200,200,30,0,(Math.PI * 2), false);
 		context.closePath();
 		context.strokeStyle = "#aaa";
 		context.stroke();
 
 
-		x = 200 + 20*Math.cos((parent.center_spin_frame / 15) * (Math.PI * 2));
-		y = 200 + 20*Math.sin((parent.center_spin_frame / 15) * (Math.PI * 2));
+		x = 200 + 30*Math.cos((parent.center_spin_frame / 15) * (Math.PI * 2));
+		y = 200 + 30*Math.sin((parent.center_spin_frame / 15) * (Math.PI * 2));
 		context.globalCompositeOperation = "lighter";
 
 		glow_gradient = context.createRadialGradient(x, y, 0, x, y, 15);
@@ -80,6 +80,9 @@ function progressBarRedraw(canvas, percent, parent){
 		context.fill();
 	context.restore();
 
+	context.textAlign = "center";
+	context.font = "regular 48px ChocolateBoxRegular";
+	context.fillText("Loading...", 200,100);
 	//Draw glowie thingie
 	x = 200 + 100*Math.cos((percent / 100) * (Math.PI * 2));
 	y = 200 + 100*Math.sin((percent / 100) * (Math.PI * 2));
