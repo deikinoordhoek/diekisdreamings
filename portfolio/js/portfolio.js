@@ -27,6 +27,7 @@ function finishLoading(){
 var fantasy_data;
 
 function init(){
+	initLightbox();
 	onloadHandler();
 	displayImages();
 	startProgressBar();	
@@ -72,8 +73,8 @@ function displayImages(){
 		a = document.createElement('a');
 		a.href = fantasy_data[n].fullsize.image.src;
 		a.setAttribute("class", "portfolio-image");
-		a.setAttribute("title", fantasy_data[n].image_title);
-		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[n].fullsize.image.src + ']);');
+		a.setAttribute("data-title", fantasy_data[n].image_title);
+		//a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + fantasy_data[n].fullsize.image.src + ']);');
 		if (Modernizr.canvas) {
 			c = document.createElement('canvas');
 			c.setAttribute("class", "portfolio-image");
@@ -97,8 +98,8 @@ function displayImages(){
 		a = document.createElement('a');
 		a.href = scifi_data[n].fullsize.image.src;
 		a.setAttribute("class", "portfolio-image");
-		a.setAttribute("title", scifi_data[n].image_title);
-		a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + scifi_data[n].fullsize.image.src + ']);');
+		a.setAttribute("data-title", scifi_data[n].image_title);
+		//a.setAttribute("onclick", "_gaq.push(['_trackPageview'," + scifi_data[n].fullsize.image.src + ']);');
 		if (Modernizr.canvas) {
 			c = document.createElement('canvas');
 			c.setAttribute("class", "portfolio-image");
@@ -114,18 +115,6 @@ function displayImages(){
 		}
 		scifi_div.appendChild(a);
 	}
-	$("a.portfolio-image").fancybox({
-		'transitionIn'	     :	'fade',
-		'transitionOut'	     :	'fade',
-		'opacity'            :  'true',
-		'overlayOpacity'     :  '.75',
-		'overlayColor'       :  '#000',
-		'hideOnContentClick' :  'true',
-		'titlePosition'      :  'inside',
-		'speedIn'            :  600,
-		'titleFormat'        : formatTitle
-		
-	});
 }
 
 function showFantasy(){

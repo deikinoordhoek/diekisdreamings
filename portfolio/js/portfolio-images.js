@@ -63,11 +63,14 @@ function markThumbnailLoaded(data){
 	}
 }
 function prerenderInnerGlow(){
-	var ITEM_OFFSET = 9;
+
+	var ITEM_OFFSET = 9; 
 	var ITEM_WIDTH = 662;
 	var ITEM_HIEGHT = 162;
 	var ITEM_INNER_GLOW_RADIUS = 46;
 	canvas = document.createElement("canvas");
+
+	if (!canvas.getContext) return;
 	context = canvas.getContext("2d");
 	canvas.width = 680;
 	canvas.height = 180;

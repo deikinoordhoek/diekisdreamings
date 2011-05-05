@@ -20,6 +20,7 @@ function progressBarUpdateProgress(percent){
 
 function progressBarRedraw(canvas, percent, parent){
 	return function() {
+	if (!canvas.getContext) return;
 	//Reset canvas to fixed width and height
 	canvas.width = 420;
 	canvas.height = 420;
