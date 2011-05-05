@@ -165,3 +165,14 @@ a img {
 a:active img{
 	border: none;
 }
+
+#loading-text{
+	font-family: "ChocolateBoxRegular";
+	font-size: 48px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+#progress-counter canvas{
+	margin-top: -65px;
+}

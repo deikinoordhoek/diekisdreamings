@@ -80,9 +80,6 @@ function progressBarRedraw(canvas, percent, parent){
 		context.fill();
 	context.restore();
 
-	context.textAlign = "center";
-	context.font = "regular 48px ChocolateBoxRegular";
-	context.fillText("Loading...", 200,100);
 	//Draw glowie thingie
 	x = 200 + 100*Math.cos((percent / 100) * (Math.PI * 2));
 	y = 200 + 100*Math.sin((percent / 100) * (Math.PI * 2));
@@ -124,8 +121,15 @@ function progressBarParticle(x, y, xd, yd, lifespan){
 function progressBarNewParticle(radians){
 	x = 200 + 100*Math.cos(radians);
 	y = 200 + 100*Math.sin(radians);
+	for (i = 0; i < this.particles.length; i++){	
+		if (this.particles[i].alive == false){
+			this.particles[i] = new progressBarParticle(x, y, (.5 - Math.random()) * 3, (.5 - Math.random()) * 3, 10);
+			return;
+		}
+	}
 	this.particles[this.particles.length] = new progressBarParticle(x, y, (.5 - Math.random()) * 3, (.5 - Math.random()) * 3, 10);
 }
+
 
 function progressBarUpdateParticles(){
 	context = this.canvas.getContext('2d');
