@@ -57,8 +57,8 @@ function progressBarRedraw(canvas, percent, parent){
 		context.stroke();
 
 
-		x = 200 + 20*Math.cos((parent.center_spin_frame / 30) * (Math.PI * 2));
-		y = 200 + 20*Math.sin((parent.center_spin_frame / 30) * (Math.PI * 2));
+		x = 200 + 20*Math.cos((parent.center_spin_frame / 15) * (Math.PI * 2));
+		y = 200 + 20*Math.sin((parent.center_spin_frame / 15) * (Math.PI * 2));
 		context.globalCompositeOperation = "lighter";
 
 		glow_gradient = context.createRadialGradient(x, y, 0, x, y, 15);
@@ -103,7 +103,7 @@ function progressBarRedraw(canvas, percent, parent){
 	}
 	parent.updateParticles();
 	parent.center_spin_frame--;
-	if (parent.center_spin_frame == 30) parent.center_spin_frame = 0;
+	if (parent.center_spin_frame == 15) parent.center_spin_frame = 0;
 	setTimeout(parent.redraw(parent.canvas, parent.percent, parent), 20);
 	}	
 
