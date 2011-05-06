@@ -83,8 +83,7 @@ function prerenderInnerGlow(){
 }
 function drawOnCanvas(canvas, highlight) {
 	context = canvas.getContext('2d');
-	canvas.width = 680;
-	canvas.height = 180;
+
 	i = this.image;
 	i.src = "portfolio/images/" + this.plain_url;
 	if (i.width == 0) {
@@ -100,6 +99,8 @@ function drawOnCanvas(canvas, highlight) {
 }
 function constructPortfolioDisplay(parent, context, highlight, image){
 	return function(){
+		context.canvas.width = 680;
+		context.canvas.height = 180;
 		markThumbnailLoaded(parent.parent);
 		var ITEM_OFFSET = 9;
 		var ITEM_WIDTH = 662;

@@ -1,9 +1,10 @@
-$("document").ready(initLightbox);
+
 function initLightbox(){
 	$("a.portfolio-image").click(function(event){
 		canvas = document.createElement("canvas");
 		if (!!canvas.getContext){
 			event.preventDefault();			
+			lightbox_image_title = this.getAttribute("data-title");
 			displayLightbox(this.href, this.getAttribute("data-title"));
 			$("#lightbox-canvas").click(function(){hideLightbox()});
 			
@@ -14,7 +15,7 @@ function hideLightbox(){
 	$("#lightbox-canvas").fadeOut(400);
 	setTimeout(function(){$("#lightbox-canvas").remove()}, 400);
 }
-function displayLightbox(image_url, image_title){
+function displayLightbox(image_url, lightbox_image_title){
 	//Create a new <canvas>, set it to body, and make it cover the whole page.
 
 	canvas = document.createElement("canvas");
@@ -36,10 +37,10 @@ function displayLightbox(image_url, image_title){
 	//Load the image, and pass control on to the secondary function.
 	image = new Image();
 	image.src = image_url;
-	image.onload = drawLightboxImage(image, image_title);
+	image.onload = drawLightboxImage(image, lightbox_image_title);
 }
 
-function drawLightboxImage(image, image_title){
+function drawLightboxImage(image, lightbox_image_title){
 	return function(){
 		//Load some important objects and numbers
 		canvas = document.getElementById("lightbox-canvas");
@@ -126,19 +127,19 @@ function finishDrawingLightbox(canvas, lightbox_inner_glow_data){
 		context.save();
 			context.textAlign = "center";
 			context.textBaseline = "bottom";
-			context.font = "48px ChocolateBox";
+			context.font = "48px ChocolateBoxRegular";
 			context.save();
 				context.shadowColor = "rgba(0,0,0,.68)";
 				context.shadowOffsetX = 2;
 				context.shadowOffsetY = 1;
 				context.shadowBlur = 4;
-				context.fillText(image_title, window_width / 2, image_top_y);
+				context.fillText(lightbox_image_title, window_width / 2, image_top_y);
 			context.restore();
 				text_gradient = context.createLinearGradient(0,image_top_y - 45, 0, image_top_y );
 			text_gradient.addColorStop(0, "#f9f9f9");
 			text_gradient.addColorStop(1, "#bebebe");
 			context.fillStyle= text_gradient;
-			context.fillText(image_title, window_width / 2, image_top_y);
+			context.fillText(lightbox_image_title, window_width / 2, image_top_y);
 		context.restore()
 			//Draw the inner glow
 		context.save();

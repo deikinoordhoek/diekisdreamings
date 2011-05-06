@@ -4,7 +4,7 @@ var SCIFI_PAGE = 2;
 var current_page = MAIN_PAGE;
 var progress_bar;
 $(document).ready(init);
-
+$(window).bind("load", 	function(){displayImages(); initLightbox()});
 
 function formatTitle(title, currentArray, currentIndex, currentOpts) {
     return '<div class="images-title">' + (title && title.length ? '<b>' + title + '</b>' : '' ) + '</div>';
@@ -27,9 +27,8 @@ function finishLoading(){
 var fantasy_data;
 
 function init(){
-	initLightbox();
 	onloadHandler();
-	displayImages();
+	loadImages();
 	startProgressBar();	
 
 
@@ -64,6 +63,29 @@ function hideProgressBar(){
 	$("#loading-text").delay(100).fadeOut(500);
 	finishLoading();
 	
+}
+function loadImages(){
+	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
+	fantasy_div = document.getElementById("fantasy-images")
+	prerenderInnerGlow();
+	var i1 = Array, i2 = new Array;
+	for (n = 0; n < fantasy_data.length; n++){
+		if (Modernizr.canvas){
+			i1[n] = new Image();
+			i1[n].src = fantasy_data[n].thumbnail.plain_url;
+			i1[n].onload = markThumbnailLoaded(fantasy_data[n]);
+		}
+	}
+	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml");
+	scifi_div = document.getElementById("scifi-images")
+	var i3 = Array, i4 = new Array;
+	for (n = 0; n < scifi_data.length; n++){
+		if (Modernizr.canvas){
+			i2[n] = new Image();
+			i2[n].src = scifi_data[n].thumbnail.plain_url;
+			i2[n].onload = markThumbnailLoaded(scifi_data[n]);
+		}
+	}
 }
 function displayImages(){
 	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
