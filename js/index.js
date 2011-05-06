@@ -108,11 +108,14 @@ function addCanvasElements(images){
 		canvas_element = document.createElement('canvas');
 
 		//Transfer attributes to canvas element
+		canvas_element.width = 0;
+		canvas_element.height = 0;
 		for (j = 0; j < images[i].attributes.length; j++){
 			canvas_element.setAttribute(images[i].attributes[j].nodeName, images[i].attributes[j].nodeValue)
 		}
+		
 		canvas_elements[i] = canvas_element;
-
+	
 		//Insert the canvas element
 		images[i].parentNode.insertBefore(canvas_elements[i], images[i]);
 
