@@ -57,7 +57,7 @@ function markImageLoaded(data){
 function markThumbnailLoaded(data){ 
 	return function(){
 		data.thumbnail.is_loaded = true;
-		if (data.image.is_loaded == true){
+		if (data.fullsize.is_loaded == true){
 			data.is_loaded = true;
 		}
 	}

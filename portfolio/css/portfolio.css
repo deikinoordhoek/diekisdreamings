@@ -111,6 +111,7 @@ body {
 }
 #dragon-left{
 	margin-bottom: 50px;
+	display: none;
 }
 #dragon-right{
 	margin-bottom: 50px;
@@ -120,6 +121,7 @@ body {
         transform: scaleX(-1);
         filter: FlipH;
         -ms-filter: "FlipH";
+	display: none;
 }
 #background-sword{
 	position: absolute;
@@ -175,4 +177,10 @@ a:active img{
 
 #progress-counter canvas{
 	margin-top: -65px;
+}
+
+#back-button{
+	position: fixed;
+	bottom: 0px;
+	right: 30px;
 }
