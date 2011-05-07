@@ -62,19 +62,6 @@
 		<image_title>Evanescense</image_title>
 		<credits></credits>
 	</image>	
-	
-	<image>
-		<thumbnail>
-			<url>thumbnails/sword-of-ice.png</url>
-			<plain_url>plain_thumbnails/sword-of-ice.jpg</plain_url>
-		</thumbnail>
-
-		<fullsize>
-			<url>fullsize/sword-of-ice.jpg</url>
-		</fullsize>
-		<image_title>Sword of Ice</image_title>
-		<credits></credits>
-	</image>
 	<image>
 		<thumbnail>
 			<url>thumbnails/dueling-fates.png</url>
