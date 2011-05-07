@@ -1,3 +1,5 @@
+DOMAIN_2 = "http://diekisdreamings-images.appspot.com/";
+
 var inner_glow_data;
 
 
@@ -47,7 +49,7 @@ function loadPortfolio(manifest_file, support_webp){
 	manifest = getPortfolioManifest(manifest_file);
 	portfolio_data = getImageData(manifest, support_webp);
 	for (i = 0; i < portfolio_data.length; i++){
-		portfolio_data[i].fullsize.image.src = "portfolio/images/" + portfolio_data[i].fullsize.url;
+		portfolio_data[i].fullsize.image.src = DOMAIN_2 + "images/" + portfolio_data[i].fullsize.url;
 		portfolio_data[i].fullsize.image.onload = markImageLoaded(portfolio_data[i]);
 	}
 	return portfolio_data;
