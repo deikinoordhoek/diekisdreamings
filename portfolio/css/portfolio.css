@@ -167,7 +167,58 @@ a:active img{
 }
 
 #back-button{
-	position: fixed;
-	bottom: 0px;
-	right: 30px;
+	position: absolute;
+	top: 300px;
+	left: -5px;
+}
+
+
+#background-gun{
+	position: absolute;
+	top: 350px;
+	right: 0px;
+	z-index: -1;
+	overflow: hidden;
+}
+#background-bullet-1{
+	position: absolute;
+	top: 880px;
+	left: -100px;
+	z-index: -1;
+	overflow: hidden;
+}
+#background-bullet-2{
+	position: absolute;
+	top: 810px;
+	left: 50px;
+	z-index: -1;
+	overflow: hidden;
+}
+
+#background-gears{
+	position: absolute;
+	top: 1200px;
+	right: -200px;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.credit{
+	font-size: 11px;
+	color: #111;
+	font-family: "Arial";
+}
+
+#footer-background { 
+	background: url('../../images/spriteme2.png') repeat-x; 
+	padding-top: 15px; 
+	height: 42px; 
+	width: 100%;
+	background-position: 0% -10px; 
+	-moz-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+        filter: FlipV;
+        -ms-filter: "FlipV";
 }

@@ -112,6 +112,10 @@ function displayImages(){
 		}
 		fantasy_div.appendChild(a);
 	}
+	fantasy_credit_div = document.createElement('div');
+	fantasy_credit_div.innerHTML = ""
+	fantasy_credit_div.setAttribute("class", "credit");
+	fantasy_div.appendChild(fantasy_credit_div);
 
 	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml");
 	scifi_div = document.getElementById("scifi-images")
@@ -137,6 +141,10 @@ function displayImages(){
 		}
 		scifi_div.appendChild(a);
 	}
+	scifi_credit_div = document.createElement('div');
+	scifi_credit_div.innerHTML = "Gun model by Patrick Sharkey. Gears by Obsidian Dawn."
+	scifi_credit_div.setAttribute("class", "credit");
+	scifi_div.appendChild(scifi_credit_div);
 }
 
 function showFantasy(){
