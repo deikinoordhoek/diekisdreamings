@@ -78,6 +78,7 @@ function prerenderInnerGlow(){
 	context.fillStyle = "white";
 	context.fill();
 	stackBlurCanvasRGBA(context.canvas, 0, 0, context.canvas.width, context.canvas.height, ITEM_INNER_GLOW_RADIUS);
+	
 	inner_glow_data = new Image()
 	inner_glow_data.src = context.canvas.toDataURL("image/png")
 }

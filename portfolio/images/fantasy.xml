@@ -26,7 +26,8 @@
 				<tlY>213</tlY>
 				<brX>991</brX>
 				<brY>381</brY>
-			</subset>		</thumbnail>
+			</subset>
+		</thumbnail>
 		<fullsize>
 			<url>fullsize/magical-forest.jpg</url>
 		</fullsize>
@@ -36,7 +37,13 @@
 	<image>
 		<thumbnail>
 			<url>thumbnails/deathly-visage.png</url>
-			<plain_url>plain_thumbnails/deathly-visage.jpg</plain_url>
+			<plain_url>fullsize/deathly-visage.jpg</plain_url>
+			<subset>
+				<tlX>215</tlX>
+				<tlY>82</tlY>
+				<brX>968</brX>
+				<brY>210</brY>
+			</subset>
 		</thumbnail>
 		<fullsize>
 			<url>fullsize/deathly-visage.jpg</url>
