@@ -91,7 +91,7 @@ function loadImages(webp){
 	for (n = 0; n < fantasy_data.length; n++){
 		if (Modernizr.canvas){
 			i1[n] = new Image();
-			i1[n].src = "portfolio/images/" + fantasy_data[n].thumbnail.plain_url;
+			i1[n].src = DOMAIN_2 + "images/" + fantasy_data[n].thumbnail.plain_url;
 			i1[n].onload = markThumbnailLoaded(fantasy_data[n]);
 		}
 	}
@@ -101,7 +101,7 @@ function loadImages(webp){
 	for (n = 0; n < scifi_data.length; n++){
 		if (Modernizr.canvas){
 			i2[n] = new Image();
-			i2[n].src = "portfolio/images/" + scifi_data[n].thumbnail.plain_url;
+			i2[n].src = DOMAIN_2 + "images/" + scifi_data[n].thumbnail.plain_url;
 			i2[n].onload = markThumbnailLoaded(scifi_data[n]);
 		}
 	}
