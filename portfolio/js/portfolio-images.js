@@ -94,7 +94,7 @@ function drawOnCanvas(canvas, highlight) {
 	context = canvas.getContext('2d');
 
 	i = this.image;
-	i.src = "portfolio/images/" + this.plain_url;
+	i.src = DOMAIN_2 + "images/" + this.plain_url;
 	if (i.width == 0) {
 		i.onload = constructPortfolioDisplay(this, context, highlight, i);
 	}
