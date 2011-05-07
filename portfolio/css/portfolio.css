@@ -62,6 +62,7 @@ body {
 
 #banner{
 	margin: 40px auto 0;
+	display:none;
 }
 
 #content{

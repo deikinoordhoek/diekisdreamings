@@ -20,8 +20,9 @@ function finishLoading(){
 	$.History.bind('/fantasy', showFantasy);
 	$.History.bind('/scifi', showScifi);
 	$.History.bind('/main', showMain);
-	$("#fantasy-banner").delay(900).fadeIn();
-	$("#scifi-banner").delay(1000).fadeIn();
+	$("#banner").delay(900).fadeIn();	
+	$("#fantasy-banner").delay(1000).fadeIn();
+	$("#scifi-banner").delay(1100).fadeIn();
 
 };
 var fantasy_data;
