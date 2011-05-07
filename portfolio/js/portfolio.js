@@ -26,10 +26,28 @@ function finishLoading(){
 
 };
 var fantasy_data;
+global_webp_support = false;
+function portfolioStageTwoLoad(webp){
+	global_webp_support = webp;
+	loadImages(webp);	
+}
+function portfolioOnloadHandler(){
+	//Detect WebP support	
+	var div = document.createElement('div');
+	div.innerHTML = '<img id = "test_image" src="data:image/webp,RIFF*%00%00%00WEBPVP8%20%1E%00%00%00%10%02%00%9D%01*%04%00%04%00%0B%C7%08%85%85%88%85%84%88%3F%82%00%0C%0D%60%00%FE%E6%B5%00">';
+	webp_test = div.firstChild;
+	div.firstChild.onerror = function(){portfolioStageTwoLoad(false)}
+	div.firstChild.onload = function(){portfolioStageTwoLoad(true)}
 
+	var webp_opera_test = new Image();
+	webp_opera_test.src = "data:image/webp,RIFF*%00%00%00WEBPVP8%20%1E%00%00%00%10%02%00%9D%01*%04%00%04%00%0B%C7%08%85%85%88%85%84%88%3F%82%00%0C%0D%60%00%FE%E6%B5%00"
+	webp_opera_test.onerror = function(){portfolioStageTwoLoad(false)}
+	webp_opera_test.onload = function(){portfolioStageTwoLoad(true)}
+
+}
 function init(){
 	onloadHandler();
-	loadImages();
+	portfolioOnloadHandler();
 	startProgressBar();	
 
 
@@ -65,8 +83,8 @@ function hideProgressBar(){
 	finishLoading();
 	
 }
-function loadImages(){
-	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
+function loadImages(webp){
+	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml", webp);
 	fantasy_div = document.getElementById("fantasy-images")
 	prerenderInnerGlow();
 	var i1 = Array, i2 = new Array;
@@ -77,7 +95,7 @@ function loadImages(){
 			i1[n].onload = markThumbnailLoaded(fantasy_data[n]);
 		}
 	}
-	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml");
+	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml", webp);
 	scifi_div = document.getElementById("scifi-images")
 	var i3 = Array, i4 = new Array;
 	for (n = 0; n < scifi_data.length; n++){
@@ -89,7 +107,7 @@ function loadImages(){
 	}
 }
 function displayImages(){
-	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml");
+	fantasy_data = loadPortfolio("portfolio/images/fantasy.xml", global_webp_support);
 	fantasy_div = document.getElementById("fantasy-images")
 	prerenderInnerGlow();
 	for (n = 0; n < fantasy_data.length; n++){
@@ -118,7 +136,7 @@ function displayImages(){
 	fantasy_credit_div.setAttribute("class", "credit");
 	fantasy_div.appendChild(fantasy_credit_div);
 
-	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml");
+	scifi_data = loadPortfolio("portfolio/images/sci-fi.xml", global_webp_support);
 	scifi_div = document.getElementById("scifi-images")
 
 	for (n = 0; n < scifi_data.length; n++){

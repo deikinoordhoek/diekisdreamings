@@ -1,4 +1,6 @@
 var inner_glow_data;
+
+
 function getPortfolioManifest(manifest_file){
 	var req = new XMLHttpRequest();
 	req.open('GET', manifest_file, false)
@@ -6,7 +8,7 @@ function getPortfolioManifest(manifest_file){
 	if (req.status==200) return req.responseText;
 }
 
-function getImageData(input_xml){
+function getImageData(input_xml, support_webp){
 	if (window.DOMParser){
 		parser = new DOMParser();
 		xmlDoc = parser.parseFromString(input_xml,"text/xml")
@@ -20,7 +22,11 @@ function getImageData(input_xml){
 
 		ie_thumbnail_url = "portfolio/images/" + xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("url")[0].childNodes[0].nodeValue;
 		thumbnail_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("plain_url")[0].childNodes[0].nodeValue;
-		fullsize_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("fullsize")[0].getElementsByTagName("url")[0].childNodes[0].nodeValue;
+
+		fullsize_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("fullsize")[0].getElementsByTagName("jpeg")[0].childNodes[0].nodeValue;
+		if (support_webp) fullsize_url = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("fullsize")[0].getElementsByTagName("webp")[0].childNodes[0].nodeValue;
+		if (thumbnail_url == "=fullsize") thumbnail_url = fullsize_url;
+
 		image_title = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("image_title")[0].childNodes[0].nodeValue;
 		subset  = xmlDoc.getElementsByTagName("image")[i].getElementsByTagName("thumbnail")[0].getElementsByTagName("subset")[0];
 		if (!!subset){
@@ -37,9 +43,9 @@ function getImageData(input_xml){
 	return image_data;
 }
 
-function loadPortfolio(manifest_file){
+function loadPortfolio(manifest_file, support_webp){
 	manifest = getPortfolioManifest(manifest_file);
-	portfolio_data = getImageData(manifest);
+	portfolio_data = getImageData(manifest, support_webp);
 	for (i = 0; i < portfolio_data.length; i++){
 		portfolio_data[i].fullsize.image.src = "portfolio/images/" + portfolio_data[i].fullsize.url;
 		portfolio_data[i].fullsize.image.onload = markImageLoaded(portfolio_data[i]);
