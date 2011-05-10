@@ -43,7 +43,18 @@
 		<image_title>Lightspeed</image_title>
 		<credits></credits>
 	</image>
-
+	<image>
+		<thumbnail>
+			<url>thumbnails/refugee.png</url>
+			<plain_url>plain_thumbnails/refugee.jpg</plain_url>
+		</thumbnail>
+		<fullsize>
+			<jpeg>fullsize/JPEG/refugee.jpg</jpeg>
+			<webp>fullsize/WebP/refugee.webp</webp>
+		</fullsize>
+		<image_title>Refugee</image_title>
+		<credits></credits>
+	</image>
 	<image>
 		<thumbnail>
 			<url>thumbnails/infinity-unbound.png</url>
