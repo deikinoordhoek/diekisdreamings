@@ -613,7 +613,6 @@ function BlurStack()
 function progressBar(canvas){
 	this.canvas = canvas;
 	this.percent = 0;
-	this.target_percent = 0;
 	this.updateProgress = progressBarUpdateProgress;
 	this.redraw = progressBarRedraw;
 	this.particles = new Array();
@@ -626,14 +625,13 @@ function progressBar(canvas){
 }
 
 function progressBarUpdateProgress(percent){
-	if (percent > this.target_percent) this.target_percent = percent;
-	if (this.target_percent > 100) this.target_percent = 100;
-	if (this.target_percent < 0) this.target_percent = 0;
+	if (percent > this.percent) this.percent = percent;
+	if (this.percent > 100) this.percent = 100;
+	if (this.percent < 0) this.percent = 0;
 }
 
 function progressBarRedraw(canvas, percent, parent){
 	return function() {
-	if (parent.target_percent > percent) percent++;
 	if (!canvas.getContext) return;
 	//Reset canvas to fixed width and height
 	canvas.width = 420;
