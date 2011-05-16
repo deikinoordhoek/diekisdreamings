@@ -171,7 +171,7 @@ function drawImage(mask, image_src, canvas){
 
 function imageLoadError(url){
 	return function(){
-		doError("404 not found:" + url, 0)
+		doError("404 not found: " + url,"", 0)
 	}
 }
 
