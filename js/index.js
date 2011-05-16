@@ -198,7 +198,7 @@ function drawImageAlpha(canvas, image, pix_mask){
 }
 function doError(msg,url,ln) {
 	var strValues = "errMsg=" + escape(msg);    strValues += "&errLine=" + ln;    strValues += "&queryString=" + escape(location.search);    strValues += "&Url=" + escape(location.pathname);    strValues += "&HTTPRef=" + escape(document.referrer);
-	var requestImage = new image()
+	var requestImage = new Image()
 	image.src = "http://diekisdreamings-images.appspot.com/error-handler.gif?" + strValues
 }
 
