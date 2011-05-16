@@ -132,6 +132,7 @@ function addCanvasElements(images){
 function drawCanvasElement(canvas, image){
 	mask = new Image()
 	mask.onload = drawImage(mask, image.getAttribute('data-image'), canvas);
+	mask.onerror = imageLoadError(image.getAttribute('data-mask'));
 	mask.src = image.getAttribute('data-mask');
 	
 }
@@ -162,9 +163,16 @@ function drawImage(mask, image_src, canvas){
 
 		image = new Image();
 		image.onload = drawImageAlpha(canvas, image, pix_mask);
+		image.onerror = imageLoadError(image_src);
 		image.src = image_src;	
 	};
 	
+}
+
+function imageLoadError(url){
+	function(){
+		doError("404 not found", url, 0)
+	}
 }
 
 function drawImageAlpha(canvas, image, pix_mask){
