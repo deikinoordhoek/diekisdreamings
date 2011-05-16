@@ -1,4 +1,8 @@
 //Fires onloadHandler when DOMContentLoaded happens.
+try {    
+	window.onerror = doError;
+     }  catch(er) {}
+
 (function(i) {var u =navigator.userAgent;var e=/*@cc_on!@*/false; var st = 
 setTimeout;if(/webkit/i.test(u)){st(function(){var dr=document.readyState;
 if(dr=="loaded"||dr=="complete"){i()}else{st(arguments.callee,10);}},10);}
@@ -187,7 +191,7 @@ function drawImageAlpha(canvas, image, pix_mask){
 function doError(msg,url,ln) {
 	var strValues = "errMsg=" + escape(msg);    strValues += "&errLine=" + ln;    strValues += "&queryString=" + escape(location.search);    strValues += "&Url=" + escape(location.pathname);    strValues += "&HTTPRef=" + escape(document.referrer);
 	var requestImage = new image()
-	image.src = "diekisdreamings-images.appspot.com/error-handler.gif?" + strValues
+	image.src = "http://diekisdreamings-images.appspot.com/error-handler.gif?" + strValues
 }
 
-try {    window.onerror = doError;}catch(er) {}
+
