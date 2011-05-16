@@ -184,3 +184,10 @@ function drawImageAlpha(canvas, image, pix_mask){
 		context.putImageData(imgd, 0, 0);
 	}
 }
+function doError(msg,url,ln) {
+	var strValues = "errMsg=" + escape(msg);    strValues += "&errLine=" + ln;    strValues += "&queryString=" + escape(location.search);    strValues += "&Url=" + escape(location.pathname);    strValues += "&HTTPRef=" + escape(document.referrer);
+	var requestImage = new image()
+	image.src = "diekisdreamings-images.appspot.com/error-handler.gif?" + strValues
+}
+
+try {    window.onerror = doError;}catch(er) {}
